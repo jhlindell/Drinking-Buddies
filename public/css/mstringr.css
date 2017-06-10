@@ -1,0 +1,25 @@
+table {
+  background-image: url('../images/ricepaper_v3.png');
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+}
+
+body {
+  font-size: 20px;
+}
+
+#title {
+  font-size: 50px;
+}
+
+th {
+  text-align: center;
+}
+
+thead {
+  text
+}
+
+tr {
+  -vendor-animation-duration: 1s;
+  /*-vendor-animation-delay: 1.5s;*/
+}
