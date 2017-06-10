@@ -62,6 +62,16 @@ table > tbody > tr > td {
   -vendor-animation-duration: 3s;
 }
 
+#navPanels {
+  text-align: center;
+}
+
+.navCards {
+  display:inline-block;
+  float: none;
+  -vendor-animation-duration: 3s;
+}
+
 #partyInfo {
   text-align: center;
   margin-bottom: 15px;
