@@ -19,175 +19,58 @@
         <div class="nav navbar-right">
           <h1 id="brand">Cocktail Party!</h1>
         </div>
-        <div>
-          <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="index.html">Plan</a></li>
-            <li role="presentation"><a href="mstringr.html">Master List</a></li>
-            <li role="presentation"><a href="barguide.html">Bartender's Guide</a></li>
-            <li role="presentation"><a href="menu.html">Menu</a></li>
-          </ul>
-        </div>
       </div>
     </nav>
   </header>
   <main>
     <div class="container">
-      <div id="partyInfo" class="row">
-        <div class="col-md-2 col-sm-12">
-          <button class="btn btn-default loadButton">Load</button>
-          <button class="btn btn-default saveButton">Save</button>
-          <button class="btn btn-default clearButton">Clear</button>
-        </div>
-        <!-- <div class="col-md-1">
-        </div>
-        <div class="col-md-1">
-        </div> -->
-        <div class="input-group col-md-3 col-sm-12 partyInfo">
-          <span class="input-group-addon">Party Name</span>
-          <input type="text" id="partyName" class="form-control" placeholder="Party Name" aria-describedby="partyName" required>
-        </div>
-        <div class="input-group col-md-2 col-sm-12 partyInfo">
-          <span class="input-group-addon">Party Date</span>
-          <input type="date" id="partyDate" class="form-control" placeholder="Party Date" aria-describedby="partyDate" required>
-        </div>
-        <div class="input-group col-md-3 col-sm-12 partyInfo">
-          <span class="input-group-addon">Number of Guests</span>
-          <input type="number" id="guestCount" class="form-control" placeholder="# of Guests" aria-describedby="guestCount" required>
-        </div>
-      </div>
-      <div id="recipes" class="row">
-        <div class="col-md-4 col-sm-12 recipeCards animated rollIn fadeOutRight" data-recipe="1">
-          <div class="panel panel-default">
-            <div class="panel-heading text-center">
-              <h3 class="panel-title">Recipe 1</h3>
-            </div>
-            <div class="panel-body">
-              <div class="row recipeBody">
-
-              </div>
-              <div class="row recipeButtonRow">
-                <button class="updateRecipe">Update Recipe</button>
-                <button class="deleteButton">Delete Recipe</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="cardClone" class="col-md-4 col-sm-12 animated rollIn fadeOutRight" style="display: none;">
+      <div id="loginBox" class="row">
+        <div class="col-md-7 col-sm-12 loginBox">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Recipe</h3>
+              <h3 class="panel-title">Login</h3>
             </div>
             <div class="panel-body">
-              <div class="row recipeBody">
-
-              </div>
-              <div class="row recipeButtonRow">
-                <button class="updateRecipe">Update Recipe</button>
-                <button class="deleteButton">Delete Recipe</button>
-              </div>
+              <span class="input-group-addon">Username</span>
+              <input type="text" id="userName" class="form-control" placeholder="Username" aria-describedby="userName" required>
+              <span class="input-group-addon">Password</span>
+              <input type="text" id="password" class="form-control" placeholder="Password" aria-describedby="password" required>
+              <button id="login" class="btn btn-default loginButtons">Login</button>
+              <br/>
+              <button id="signUpButton" class="btn btn-default loginButtons">Sign Up</button>
             </div>
           </div>
         </div>
       </div>
-      <div id="addRecipeButton" class="row">
-        <button>Add Recipe</button>
-      </div>
-
-      <div id="recipeBox" class="row">
-        <div class="col-md-7 col-sm-12 recipeBox animated slideInDown" style="display: none;">
-          <div class="panel panel-primary">
+      <div id="signUpBox" class="row">
+        <div class="col-md-7 col-sm-12 signUpBox" style="display: none;">
+          <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Recipe Information</h3>
+              <h3 class="panel-title">Sign Up</h3>
             </div>
             <div class="panel-body">
-              <div class="row">
-                <div class="input-group col-md-9 col-sm-12 partyInfo">
-                  <span class="input-group-addon">Drink Name</span>
-                  <input type="text" id="drinkName" class="form-control" placeholder="Drink Name" aria-describedby="drinkName" required>
-                </div>
-              </div>
-              <div class="row">
-                <div>
-                  <h2>Ingredients:</h2>
-                </div>
-                <div id="ingredients">
-                  <div id="staticIngredient" class="ingredient">
-                    <div class="row">
-                      <div class="col-md-2">
-                        <label>Measure</label>
-                        <input type="text" class="form-control measure" placeholder="#">
-                      </div>
-                      <div class="col-md-2">
-                        <label>Unit</label>
-                        <select class="selectpicker form-control unit">
-                          <option>oz</option>
-                          <option>cup</option>
-                          <option>tsp</option>
-                          <option>tbsp</option>
-                          <option>dash</option>
-                          <option>drops</option>
-                          <option>each</option>
-                        </select>
-                      </div>
-                      <div class="col-md-8">
-                        <label>Ingredient Name</label>
-                        <input type="text" class="form-control ingName" placeholder="Ingredient Name">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="ingClone" style="display: none;">
-                    <div class="row">
-                      <div class="col-md-2">
-                        <input type="text" class="form-control measure" placeholder="#">
-                      </div>
-                      <div class="col-md-2">
-                        <select class="selectpicker form-control unit">
-                            <option>oz</option>
-                            <option>cup</option>
-                            <option>tsp</option>
-                            <option>tbsp</option>
-                            <option>dash</option>
-                            <option>drops</option>
-                            <option>each</option>
-                          </select>
-                      </div>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control ingName" placeholder="Ingredient Name">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div id="addIngButton">
-                  <button>Add Ingredient</button>
-                </div>
-              </div>
-              <div class="row">
-                <label class="recipeBoxLabel">Instructions:</label>
-                <textarea id="instructions" type="textarea" class="form-control" placeholder="Instructions"></textarea>
-              </div>
-              <div class="row">
-                <label class="recipeBoxLabel">Description:</label>
-                <textarea id="description" type="textarea" class="form-control" placeholder="Description"></textarea>
-              </div>
-              <div id="addDrink" class="row">
-                <button class="updateRecipeButton">Update Recipe</button>
-              </div>
+              <span class="input-group-addon">Username</span>
+              <input type="text" id="newUserName" class="form-control" placeholder="Username" aria-describedby="userName" required>
+              <span class="input-group-addon">Email</span>
+              <input type="email" id="newUserEmail" class="form-control" placeholder="email" aria-describedby="email" required>
+              <span class="input-group-addon">Password</span>
+              <input type="text" id="newPassword" class="form-control" placeholder="Password" aria-describedby="password" required>
+              <span class="input-group-addon">Confirm Password</span>
+              <input type="text" id="secondPassword" class="form-control" placeholder="Password" aria-describedby="password" required>
+              <span class="input-group-addon">Date of Birth</span>
+              <input type="date" id="birthday" class="form-control" placeholder="birthday" aria-describedby="birthday" required>
+              <button id="signUp" class="btn btn-default loginButtons">Sign Up</button>
+              <button id="cancelSignUp" class="btn btn-default loginButtons">Cancel</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="pageBottom">
     </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script> -->
-  <script src="js/main.js"></script>
+  <script src="js/login.js"></script>
 </body>
 
 </html>

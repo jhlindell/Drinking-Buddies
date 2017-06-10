@@ -117,6 +117,28 @@ table > tbody > tr > td {
   float:none;
 }
 
+#loginBox{
+  text-align: center;
+}
+
+.loginBox {
+  display: inline-block;
+  float:none;
+}
+
+#signUpBox{
+  text-align: center;
+}
+
+.signUpBox{
+  display: inline-block;
+  float:none;
+}
+
+.loginButtons{
+  margin-top: 5px;
+}
+
 #addIngButton {
   margin-top: 10px;
   margin-bottom: 10px;
