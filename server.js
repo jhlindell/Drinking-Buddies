@@ -36,6 +36,8 @@ app.use(cookieParser());
 
 app.use(express.static(path.join('public')));
 
+app.use('/api/stockitems', stockitems);
+
 app.use((req, res, next) => {
   res.sendStatus(404);
 });

@@ -22,10 +22,10 @@ exports.seed = function(knex, Promise) {
     // {id: , name: ''},
 ];//closes data array
 
-  return knex('users').del()
+  return knex('categories').del()
     .then(() => {
-      return knex('users').insert(data);})
+      return knex('categories').insert(data);})
     .then(() => {
-      return knex.raw("SELECT setval('users_id_seq', (SELECT MAX(id) FROM users))");
+      return knex.raw("SELECT setval('categories_id_seq', (SELECT MAX(id) FROM categories))");
     });
 };
