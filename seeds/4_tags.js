@@ -1,13 +1,33 @@
 
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
+
+  let data = [
+    {id: 1, name: 'Jamaican'},
+    {id: 2, name: 'hogo'},
+    {id: 3, name: 'pot still'},
+    {id: 4, name: 'blended'},
+    {id: 5, name: 'single'},
+    {id: 6, name: 'aged'},
+    {id: 7, name: 'light / blanco'},
+    {id: 8, name: 'amber / oro / reposado'},
+    {id: 9, name: 'dark / anejo'},
+    {id: 10, name: 'rhum agricole'},
+    {id: 11, name: 'black strap'},
+    {id: 12, name: '151 / overproof'},
+    {id: 13, name: 'Virgin Islands'},
+    {id: 14, name: 'Cuban / Puerto Rican'},
+    {id: 15, name: ''},
+
+
+
+
+    // {id: , name: ''},
+  ];
+
+  return knex('users').del()
+    .then(() => {
+      return knex('users').insert(data);})
+    .then(() => {
+      return knex.raw("SELECT setval('users_id_seq', (SELECT MAX(id) FROM users))");
     });
 };
