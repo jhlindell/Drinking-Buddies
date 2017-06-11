@@ -1,5 +1,6 @@
 
 exports.seed = function(knex, Promise) {
+
   let data = [{
     id: 1,
     username: 'Shotgun',
@@ -9,7 +10,7 @@ exports.seed = function(knex, Promise) {
     isAdmin: true,
     birthday: '10/14/1978'
   }];
-  // Deletes ALL existing entries
+
   return knex('users').del()
     .then(() => {
       return knex('users').insert(data);})
