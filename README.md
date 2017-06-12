@@ -1,12 +1,12 @@
-# Q2-Project: The Misterfits present: Cocktail Party
+# Q2-Project: The Misterfits present: Drinking Buddies
 
 ##What is this application?
-Cocktail Party (C-P) is a full-stack web application layering a social-sharing component over a party-planning tool with access to a cocktail recipe database.
+Drinking Buddies (D-B) is a full-stack web application layering a social-sharing component over a party-planning tool with access to a cocktail recipe database.
 
-##What problem does C-P solve?
-Planning a get-together with friends should be an utterly enjoyable experience focused on the mixology craft and quality company. Too often, searching myriad sources for recipes, or recalling where they were stashed, or what whom should bring or when that party even was, keep us from concocting our libations and drinking life. By simplifying all aspects of cocktail party-planning, from recipe research and menu creation, to alerting friends and finding new connections, C-P provides a refreshing entertaining solution.
+##What problem does D-B solve?
+Planning a get-together with friends should be an utterly enjoyable experience focused on the mixology craft and quality company. Too often, searching myriad sources for recipes, or recalling where they were stashed, or what whom should bring or when that party even was, keep us from concocting our libations and drinking life. By simplifying all aspects of cocktail party-planning, from recipe research and menu creation, to alerting friends and finding new connections, D-B provides a refreshing entertaining solution.
 
-##What technologies does C-P use?
+##What technologies does D-B use?
 HTML5, Bootstrap CSS, ES6 & jQuery, Node & Express, PostgreSQL & Knex
 
 ##Minimum Viable Product goals
@@ -16,7 +16,7 @@ HTML5, Bootstrap CSS, ES6 & jQuery, Node & Express, PostgreSQL & Knex
 4. must-be-mobile
 
 ##Project Management tool (Trello)
-<https://trello.com/b/w2uDPrnh/the-misterfits-present-cocktail-party>
+<https://trello.com/b/w2uDPrnh/the-misterfits-present-drinking-buddies>
 
 ##Stretch goals
 1. a more robust social component allowing:
