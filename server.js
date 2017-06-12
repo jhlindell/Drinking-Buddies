@@ -35,6 +35,7 @@ app.use(cookieParser());
 // });
 
 app.use(express.static(path.join('public')));
+app.use(express.static(path.join('secure')));
 
 app.use('/api/stockitems', stockitems);
 
