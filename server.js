@@ -17,7 +17,9 @@ const stockitems = require('./routes/stockitems');
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-//app.use('/api/users', users);
+app.use('/api/users', users);
+
+app.use(express.static(path.join('public')));
 
 // app.use(function (req,res,next) {
 //   if (req.cookies.token) {
@@ -34,7 +36,6 @@ app.use(cookieParser());
 //   }
 // });
 
-app.use(express.static(path.join('public')));
 app.use(express.static(path.join('secure')));
 
 app.use('/api/stockitems', stockitems);
