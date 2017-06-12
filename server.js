@@ -19,6 +19,8 @@ app.use(cookieParser());
 
 app.use('/api/users', users);
 
+app.use(express.static(path.join('public')));
+
 // app.use(function (req,res,next) {
 //   if (req.cookies.token) {
 //     jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded) {
@@ -34,7 +36,6 @@ app.use('/api/users', users);
 //   }
 // });
 
-app.use(express.static(path.join('public')));
 app.use(express.static(path.join('secure')));
 
 app.use('/api/stockitems', stockitems);
