@@ -5,13 +5,8 @@ const express = require('express');
 const router = express.Router();
 const queries = require('../queries/si_query');
 
-router.get('*', (req, res, next) => {
-  console.log('got a request');
-  next();
-});
-
-router.get('/api/stockitems', (req, res, next) => {
-  queries.list()
+router.get('/:id?',(req, res, next) => {
+  queries.get(req.params.id)
   .then(result => {
     res.send(result);
   })

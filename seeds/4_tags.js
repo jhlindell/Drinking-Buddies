@@ -24,10 +24,10 @@ exports.seed = function(knex, Promise) {
     // {id: , name: ''},
   ];
 
-  return knex('users').del()
+  return knex('tags').del()
     .then(() => {
-      return knex('users').insert(data);})
+      return knex('tags').insert(data);})
     .then(() => {
-      return knex.raw("SELECT setval('users_id_seq', (SELECT MAX(id) FROM users))");
+      return knex.raw("SELECT setval('tags_id_seq', (SELECT MAX(id) FROM tags))");
     });
 };
