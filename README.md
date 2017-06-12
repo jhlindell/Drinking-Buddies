@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Q2-Project: The Misterfits present: Drinking Buddies!!
 
 #What is this application?
@@ -7,6 +8,17 @@ Drinking Buddies database (DBdb) is a full-stack web application layering a soci
 Planning a get-together with friends should be an utterly enjoyable experience focused on the mixology craft and quality company. Too often, searching myriad sources for recipes, or recalling where they were stashed, or what whom should bring or when that party even was, keep us from concocting our libations and drinking life. By simplifying all aspects of cocktail party-planning, from recipe research and menu creation, to alerting friends and finding new connections, DBdb provides a refreshing entertaining solution.
 
 #What technologies does DBdb use?
+=======
+# Q2-Project: The Misterfits present: Drinking Buddies
+
+##What is this application?
+Drinking Buddies (D-B) is a full-stack web application layering a social-sharing component over a party-planning tool with access to a cocktail recipe database.
+
+##What problem does D-B solve?
+Planning a get-together with friends should be an utterly enjoyable experience focused on the mixology craft and quality company. Too often, searching myriad sources for recipes, or recalling where they were stashed, or what whom should bring or when that party even was, keep us from concocting our libations and drinking life. By simplifying all aspects of cocktail party-planning, from recipe research and menu creation, to alerting friends and finding new connections, D-B provides a refreshing entertaining solution.
+
+##What technologies does D-B use?
+>>>>>>> eacee98ff723162e2cbd9d2365fbe771c6070d5b
 HTML5, Bootstrap CSS, ES6 & jQuery, Node & Express, PostgreSQL & Knex
 
 #Minimum Viable Product goals
