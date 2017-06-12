@@ -12,6 +12,7 @@ const path = require('path');
 const port = process.env.PORT || 8000;
 const jwt = require('jsonwebtoken');
 const users = require('./routes/users');
+const stockitems = require('./routes/stockitems');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
