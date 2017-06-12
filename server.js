@@ -34,6 +34,7 @@ app.use(cookieParser());
 // });
 
 app.use(express.static(path.join('public')));
+app.use(express.static(path.join('secure')));
 
 app.use((req, res, next) => {
   res.sendStatus(404);
