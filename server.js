@@ -17,7 +17,13 @@ const stockitems = require('./routes/stockitems');
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use('/api/users', users);
+app.post('/api/users',(req,res,next)=>{
+  console.log('pls');
+  res.send('ok');
+  next();
+})
+
+// app.use('/api/users', users);
 
 // app.use(function (req,res,next) {
 //   if (req.cookies.token) {
