@@ -19,8 +19,8 @@ function login(event) {
 }
 
 function register(event){
-  const userName = $('#newUserName').val().trim();
-  const fullName = $('#newFullName').val().trim();
+  const username = $('#newUserName').val().trim();
+  const full_name = $('#newFullName').val().trim();
   const email = $('#newUserEmail').val().trim();
   const password = $('#newPassword').val();
   const confirmPassword = $('#secondPassword').val();
@@ -31,7 +31,7 @@ function register(event){
   }
   const options = {
     contentType: 'application/json',
-    data: JSON.stringify({userName, fullName, email, password, birthday}),
+    data: JSON.stringify({username, full_name, email, password, birthday}),
     dataType: 'json',
     method: 'POST',
     url: '/api/users'

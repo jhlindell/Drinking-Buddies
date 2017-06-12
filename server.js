@@ -17,13 +17,10 @@ const stockitems = require('./routes/stockitems');
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.post('/api/users',(req,res,next)=>{
-  console.log('pls');
-  res.send('ok');
-  next();
-})
 
-// app.use('/api/users', users);
+app.use('/api/users', users);
+
+app.use(express.static(path.join('public')));
 
 // app.use(function (req,res,next) {
 //   if (req.cookies.token) {
@@ -40,7 +37,6 @@ app.post('/api/users',(req,res,next)=>{
 //   }
 // });
 
-app.use(express.static(path.join('public')));
 app.use(express.static(path.join('secure')));
 
 app.use('/api/stockitems', stockitems);
