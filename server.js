@@ -17,7 +17,6 @@ const stockitems = require('./routes/stockitems');
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-
 app.use('/api/users', users);
 
 app.use(express.static(path.join('public')));
