@@ -6,28 +6,32 @@ exports.seed = function(knex, Promise) {
       unit:1,
       measure:2.0,
       stock_item_id:1,
-      recipe_id:1
+      recipe_id:1,
+      order: 1
     },
     {
       id:2,
       unit:1,
       measure:0.5,
       stock_item_id:31,
-      recipe_id:1
+      recipe_id:1,
+      order: 2
     },
     {
       id:3,
       unit:1,
       measure:0.75,
       stock_item_id:29,
-      recipe_id:1
+      recipe_id:1,
+      order: 3
     },
     {
       id:4,
       unit:1,
       measure:0.5,
       stock_item_id:30,
-      recipe_id:1
+      recipe_id:1,
+      order: 4
     }
   ];
 

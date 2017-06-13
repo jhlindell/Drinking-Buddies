@@ -13,6 +13,7 @@ const port = process.env.PORT || 8000;
 const jwt = require('jsonwebtoken');
 const users = require('./routes/users');
 const stockitems = require('./routes/stockitems');
+const recipes = require('./routes/recipes');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -39,6 +40,7 @@ app.use(function (req,res,next) {
 app.use(express.static(path.join('secure')));
 
 app.use('/api/stockitems', stockitems);
+app.use('/api/recipes', recipes);
 
 app.use((req, res, next) => {
   res.sendStatus(404);
