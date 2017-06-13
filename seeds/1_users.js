@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
     full_name: 'Shannon Rivers',
     email: 'shannon.rivers@gmail.com',
     hashed_password: '$2a$06$PeZWh.HgnrcpySYkgyuQ8OpD/kRQKsuEYqI4HsTsJUuSdHjT0vQk2',
-    isAdmin: true,
+    admin: true,
     birthday: '10/14/1978'
   }];
 
