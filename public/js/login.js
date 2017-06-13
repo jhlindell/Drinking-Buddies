@@ -4,8 +4,8 @@ var $signUpBox = $(".signUpBox");
 var $navPanels = $("#navPanels");
 $("#signUpButton").on("click", signUp);
 $("#cancelSignUp").on("click", signUp);
-$("#login").on("click", login);
-$('#signUp').on('click',register);
+$("#login").on("submit", login);
+$('#signUp').on('submit',register);
 
 function signUp(event){
   $loginBox.toggle();
@@ -13,6 +13,7 @@ function signUp(event){
 }
 
 function login(event) {
+  event.preventDefault();
   const username = $('#userName').val().trim();
   const password = $('#password').val().trim();
   const options = {
@@ -28,12 +29,15 @@ function login(event) {
     window.location.href = '/home.html';
   })
   .fail((err)=>{
-    console.log('error', err);
-    console.log('Could not verify user');
+    window.alert("Login failed");
+    window.location.href = '/index.html';
+    // console.log('error', err);
+    // console.log('Could not verify user');
   });
 }
 
 function register(event){
+  event.preventDefault();
   const username = $('#newUserName').val().trim();
   const full_name = $('#newFullName').val().trim();
   const email = $('#newUserEmail').val().trim();

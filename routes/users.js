@@ -30,7 +30,6 @@ router.post('/register', (req,res,next) => {
 
 router.post('/login', (req,res,next) => {
     let body = req.body;
-    console.log(body);
     let username = body.username;
     let password = body.password;
 
@@ -38,7 +37,7 @@ router.post('/login', (req,res,next) => {
     .select('id', 'username', 'hashed_password', 'full_name')
     .where('username', username)
     .then((data) => {
-      if(data === undefined){
+      if(data.length === 0){
         res.setHeader('content-type', 'text/plain');
         return res.status(400).send('Bad username or password');
       } else if (bcrypt.compareSync(password, data[0].hashed_password)){
@@ -51,7 +50,6 @@ router.post('/login', (req,res,next) => {
         res.cookie('token', token, {httpOnly: true});
         return res.sendStatus(200);
       } else {
-        console.log('bad password');
         res.setHeader('content-type', 'text/plain');
         return res.status(400).send('Bad username or password');
       }
