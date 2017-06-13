@@ -29,7 +29,6 @@ app.use(function (req,res,next) {
         return next(err);
       }
       req.user = decoded;
-      console.log(req.user);
       next();
     });
   } else {

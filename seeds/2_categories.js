@@ -3,7 +3,7 @@ exports.seed = function(knex, Promise) {
 
   let data = [
     {id: 1, name: 'rum'},
-    {id: 2, name: 'whisky'},
+    {id: 2, name: 'whiskey'},
     {id: 3, name: 'gin'},
     {id: 4, name: 'vodka'},
     {id: 5, name: 'tequila'},
