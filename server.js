@@ -21,20 +21,21 @@ app.use('/api/users', users);
 
 app.use(express.static(path.join('public')));
 
-// app.use(function (req,res,next) {
-//   if (req.cookies.token) {
-//     jwt.verify(req.cookies.token, process.env.JWT_SECRET, function (err,decoded) {
-//       if (err) {
-//         res.clearCookie('token');
-//         return next(err);
-//       }
-//       req.user = decoded;
-//       next();
-//     });
-//   } else {
-//     return res.redirect('/index.html');
-//   }
-// });
+app.use(function (req,res,next) {
+  if (req.cookies.token) {
+    jwt.verify(req.cookies.token, process.env.JWT_KEY, function (err,decoded) {
+      if (err) {
+        res.clearCookie('token');
+        return next(err);
+      }
+      req.user = decoded;
+      console.log(req.user);
+      next();
+    });
+  } else {
+    return res.redirect('/index.html');
+  }
+});
 
 app.use(express.static(path.join('secure')));
 
