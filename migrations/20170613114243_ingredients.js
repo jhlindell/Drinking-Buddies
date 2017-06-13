@@ -6,9 +6,10 @@ exports.up = function(knex, Promise) {
     table.decimal('measure').notNullable().defaultsTo(0);
     table.integer('stock_item_id').notNullable().references('si_id').inTable('stock_items');
     table.integer('recipe_id').notNullable().references('id').inTable('recipes');
+    table.integer('order').notNullable();
   });
 };
 
 exports.down = function(knex, Promise) {
- return knex.schema.dropTable('ingredients')
+ return knex.schema.dropTable('ingredients');
 };
