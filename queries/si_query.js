@@ -1,6 +1,6 @@
 const knex = require('../knex');
 
-function getStockItems(id) {
+function getStockItems(id, toggle) {
   let query = knex('stock_items')
     .select(
       'stock_items.si_id as id',
@@ -12,7 +12,16 @@ function getStockItems(id) {
     .orderBy('id', 'asc');
 
     if(id){
-      query.where("si_id", id);
+      if(typeof id === 'number'){
+        query.where("si_id", id);
+      }
+      if (typeof id === 'string' && toggle === 'name'){
+        console.log(id);
+        query.where("stock_items.name", "~*", id);
+      }
+      if (typeof id === 'string' && toggle === 'category'){
+        query.where("categories.name", id);
+      }
     }
     return query;
 }
@@ -31,8 +40,8 @@ function getTags(id) {
     });
 }
 
-function get(id) {
-  return getStockItems(id)
+function getStock(id,toggle) {
+  return getStockItems(id,toggle)
     .then(items =>
       Promise.all(items.map(item =>
         getTags(item.id)
@@ -40,11 +49,17 @@ function get(id) {
           item.tags = tag_data;
           return item;
         })
-      ))
-      .then(result => id ? result[0] : result)
+      ))//closes Promise
+      .then(result => {
+        if(typeof id === 'number'){
+          return result[0];
+        } else {
+          return result;
+        }
+      })
     );
 }
 
 module.exports = {
-  get
+  getStock
 };

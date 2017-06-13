@@ -22,9 +22,15 @@ function search(event){
   event.preventDefault();
   $results.html('Gathering search results...');
   let $value = $('#searchBox').val();
+  let $toggle = $("input[name='toggleCat']:checked").val();
+  console.log($toggle);
+  let payload = {
+    id: $value,
+    toggle: $toggle
+  };
   let options = {
     contentType: 'application/json',
-    data: JSON.stringify({$value}),
+    data: JSON.stringify(payload),
     method: 'POST',
     url: '/api/stockitems/search'
   };

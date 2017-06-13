@@ -3,6 +3,10 @@ body {
   font-family: 'Amatic SC', cursive;
 }
 
+.toggles {
+  font-size: 30px;
+}
+
 .navbar-default {
   background-color: #613318;
 }
