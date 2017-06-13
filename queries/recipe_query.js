@@ -14,8 +14,18 @@ function getRecipes(id){
       .innerJoin('users', 'recipes.posted_by', 'users.id')
       .orderBy('id', 'asc');
 
+    // if(id){
+    //   query.where('recipes.id', id);
+    // }
+
     if(id){
-      query.where('recipes.id', id);
+      console.log(id + " " + "typeof: " + typeof id);
+      if(typeof id === 'number'){
+        query.where("recipes.id", id);
+      }
+      if (typeof id === 'string'){
+        query.where("recipes.name", "~*", id);
+      }
     }
     return query;
 }
@@ -40,7 +50,7 @@ function getIngredients(id){
     });
 }
 
-function get(id) {
+function getList(id) {
   return getRecipes(id)
     .then(items =>
       Promise.all(items.map(item =>
@@ -55,5 +65,5 @@ function get(id) {
 }
 
 module.exports = {
-  get
+  getList
 };
