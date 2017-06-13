@@ -40,9 +40,20 @@ function register(event){
   const password = $('#newPassword').val();
   const confirmPassword = $('#secondPassword').val();
   const birthday = $('#birthday').val().trim();
+  var today21st = new Date();
+  var dd = today21st.getDate();
+  var mm = today21st.getMonth()+1; //January is 0!
+  var yyyy = today21st.getFullYear()-21;
+  if(dd<10) {dd='0'+dd;}
+  if(mm<10) {mm='0'+mm;}
+  today21st = yyyy+'-'+mm+'-'+dd;
+  console.log('today21st', today21st);
+  console.log('birthday', birthday);
 
   if(password !== confirmPassword){
     return window.alert('Passwords do not match');
+  } else if(birthday > today21st){
+    return window.alert('You must be of legal drinking age to use Drinking Buddies');
   }
   const options = {
     contentType: 'application/json',
