@@ -32,11 +32,21 @@
     </nav>
   </header>
   <main>
-
+    <h1 id="title" class="center">Stock Items Directory</h1>
+    <form id="search">
+      <input id="searchName" type="radio" value="name" checked/>
+      <label for="searchName">Name</label>
+      <input id="searchCategory" type="radio" value="category"/>
+      <label for="searchCategory">Category</label>
+      <input id="searchTags" type="radio" value="tags"/>
+      <label for="searchTags">Tags</label>
+      <input id="searchBox" type="text" required placeholder="Enter a search term"/>
+      <button type="submit">Search</button>
+    </form>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>
+  <script src="js/stockitems.js"></script>
 </body>
 </html>
