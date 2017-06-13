@@ -15,4 +15,15 @@ router.get('/:id?',(req, res, next) => {
   });
 });
 
+//post a search by name to db
+router.post('/search', (req,res,next) => {
+  console.log(req.body);
+  res.send("here is your search result");
+});
+
+//post a stock item to db
+router.post('/', (req,res,next) => {
+
+});
+
 module.exports = router;
