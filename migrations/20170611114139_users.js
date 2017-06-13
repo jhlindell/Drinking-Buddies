@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     table.timestamps(true, true);
     table.specificType('hashed_password', 'char(60)').notNullable();
     table.date('birthday').notNullable();
-    table.boolean('isAdmin').defaultTo(false);
+    table.boolean('admin').defaultTo(false);
   });
 };
 
