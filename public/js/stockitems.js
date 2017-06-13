@@ -23,7 +23,6 @@ function search(event){
   $results.html('Gathering search results...');
   let $value = $('#searchBox').val();
   let $toggle = $("input[name='toggleCat']:checked").val();
-  console.log($toggle);
   let payload = {
     id: $value,
     toggle: $toggle
