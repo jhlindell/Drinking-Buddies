@@ -1,5 +1,6 @@
 $(document).ready(getAll);
 const $results = $('#results');
+const $tbody = $("#tableBody");
 $('#search').on('submit',search);
 
 function getAll(event){
@@ -11,7 +12,9 @@ function getAll(event){
 
   $.ajax(options)
     .done((data) =>{
-      $results.html(JSON.stringify(data));
+      $tbody.empty();
+      $results.html("");
+      dataToTable(data);
     })
     .fail((err) => {
       console.log(err);
@@ -23,7 +26,6 @@ function search(event){
   $results.html('Gathering search results...');
   let $value = $('#searchBox').val();
   let $toggle = $("input[name='toggleCat']:checked").val();
-  console.log($toggle);
   let payload = {
     id: $value,
     toggle: $toggle
@@ -36,15 +38,38 @@ function search(event){
   };
   $.ajax(options)
     .done((data) => {
+      $tbody.empty();
       if(data.length === 0){
         $results.html('Your search did not return anything.');
       } else {
-        $results.html(JSON.stringify(data));
+        $results.html("");
+        dataToTable(data);
+
       }
     })
     .fail((err) => {
       console.log(err);
       $results.html('Your search did not return anything.');
     });
+}
 
+
+
+function dataToTable(data){
+  for (let i=0; i<data.length; i++){
+  let numIngredients = data.length;
+  let $tr = $("<tr>");
+  $tr.addClass("animated");
+  $tr.addClass("slideInDown");
+  let $category = $("<td>");
+  $category.text(data[i].category);
+  let $name = $("<td>");
+  $name.text(data[i].name);
+  let $description = $("<td>");
+  $description.text(data[i].description);
+  $tr.append($category);
+  $tr.append($name);
+  $tr.append($description);
+  $tbody.append($tr);
+  }
 }

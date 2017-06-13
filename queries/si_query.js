@@ -16,11 +16,10 @@ function getStockItems(id, toggle) {
         query.where("si_id", id);
       }
       if (typeof id === 'string' && toggle === 'name'){
-        console.log(id);
         query.where("stock_items.name", "~*", id);
       }
       if (typeof id === 'string' && toggle === 'category'){
-        query.where("categories.name", id);
+        query.where("categories.name", "~*", id);
       }
     }
     return query;
