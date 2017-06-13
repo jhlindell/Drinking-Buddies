@@ -1,18 +1,5 @@
 const knex = require('../knex');
 
-// function getStockItem(id){
-//   return knex('stock_items')
-//   .select(
-//     'stock_items.si_id as id',
-//     'stock_items.name as name',
-//     'stock_items.description as description',
-//     'categories.name as category'
-//   )
-//   .innerJoin('categories', 'stock_items.category', 'categories.id')
-//   .where('si_id', id)
-//   .then()
-// }
-
 function getStockItems(id) {
   let query = knex('stock_items')
     .select(
@@ -27,7 +14,6 @@ function getStockItems(id) {
     if(id){
       query.where("si_id", id);
     }
-
     return query;
 }
 
@@ -60,6 +46,5 @@ function get(id) {
 }
 
 module.exports = {
-  get,
-  getTags
+  get
 };
