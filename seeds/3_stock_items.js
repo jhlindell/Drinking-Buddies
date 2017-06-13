@@ -142,6 +142,21 @@ exports.seed = function(knex, Promise) {
     description: 'Mentha (also known as mint, from Greek míntha, is a genus of plants in the family Lamiaceae (mint family). Mints are aromatic, almost exclusively perennial, rarely annual herbs.',
     category: 16},
 
+    {si_id: 29,
+    name: 'Lime Juice',
+    description: 'The juice of a lime.',
+    category: 9},
+
+    {si_id: 30,
+    name: 'Orgeat',
+    description: 'Almond flavored syrup.',
+    category: 13},
+
+    {si_id: 31,
+    name: 'Pierre Ferrand Curacao',
+    description: 'orange flavored liquor',
+    category: 7},
+
     // {si_id: ,
     // name: '',
     // description: '',
