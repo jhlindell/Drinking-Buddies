@@ -1,10 +1,10 @@
+
 var $loginBox = $(".loginBox");
 var $signUpBox = $(".signUpBox");
 var $navPanels = $("#navPanels");
 $("#signUpButton").on("click", signUp);
 $("#cancelSignUp").on("click", signUp);
 $("#login").on("click", login);
-
 $('#signUp').on('click',register);
 
 function signUp(event){
@@ -13,9 +13,24 @@ function signUp(event){
 }
 
 function login(event) {
-   window.location = "home.html";
-  // $loginBox.toggle();
-  // $navPanels.toggle();
+  const username = $('#userName').val().trim();
+  const password = $('#password').val().trim();
+  const options = {
+    contentType: 'application/json',
+    data: JSON.stringify({username, password}),
+    method: 'POST',
+    url: '/api/users/login'
+  };
+
+  $.ajax(options)
+  .done(()=>{
+    console.log('successful login');
+    window.location.href = '/home.html';
+  })
+  .fail((err)=>{
+    console.log('error', err);
+    console.log('Could not verify user');
+  });
 }
 
 function register(event){
@@ -27,21 +42,20 @@ function register(event){
   const birthday = $('#birthday').val().trim();
 
   if(password !== confirmPassword){
-    return window.alert('Passwords do not match')
+    return window.alert('Passwords do not match');
   }
   const options = {
     contentType: 'application/json',
     data: JSON.stringify({username, full_name, email, password, birthday}),
-    dataType: 'json',
     method: 'POST',
-    url: '/api/users'
-  }
-console.log('uhhhh')
+    url: '/api/users/register'
+  };
+
   $.ajax(options)
   .done(()=>{
-    window.location.href = 'home.html'
+    window.location.href = 'index.html';
   })
   .fail(($xhr)=>{
-    console.log('fail');
-  })
+    console.log('Could not create new user');
+  });
 }
