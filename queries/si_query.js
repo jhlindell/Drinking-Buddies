@@ -14,7 +14,6 @@ function getStockItems(id) {
     if(id){
       query.where("si_id", id);
     }
-
     return query;
 }
 
@@ -47,6 +46,5 @@ function get(id) {
 }
 
 module.exports = {
-  get,
-  getTags
+  get
 };

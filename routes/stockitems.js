@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const queries = require('../queries/si_query');
 
-router.get('/:id?',(req, res, next) => {
+router.get('/:id?', (req, res, next) => {
   queries.get(req.params.id)
   .then(result => {
     res.send(result);
