@@ -57,15 +57,20 @@ exports.seed = function(knex, Promise) {
     description: 'Bacardi Gold is expertly crafted by Maestros de Ron Bacardi. Its rich flavors and golden complexion are developed in toasted oak barrels and its mellow character comes from being shaped through a secret blend of charcoals.  Bacardi Gold features rich vanilla, buttery caramel, toasted almond and sweet banana notes with the warm zest of orange peel and a light tasting, oaky finish.',
     category: 1},
 
-    // {si_id: 12,
-    // name: '',
-    // description: '',
-    // category: },
-    //
-    // {si_id: 13,
-    // name: '',
-    // description: '',
-    // category: },
+    {si_id: 29,
+    name: 'Lime Juice',
+    description: 'The juice of a lime.',
+    category: 9},
+
+    {si_id: 30,
+    name: 'Orgeat',
+    description: 'Almond flavored syrup.',
+    category: 13},
+
+    {si_id: 31,
+    name: 'Pierre Ferrand Curacao',
+    description: 'orange flavored liquor',
+    category: 7},
 
     // {si_id: ,
     // name: '',
