@@ -29,7 +29,7 @@ router.post('/search', (req,res,next) => {
 
 //post a stock item to db
 router.post('/', (req,res,next) => {
-
+  
 });
 
 module.exports = router;

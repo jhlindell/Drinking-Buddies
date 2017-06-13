@@ -7,6 +7,17 @@ const bcrypt = require ('bcrypt');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 
+router.get('/', (req,res,next)=>{
+  jwt.verify(req.cookies.token, process.env.JWT_KEY, function (err,decoded) {
+    if (err) {
+      res.clearCookie('token');
+      return next(err);
+    }
+    req.user = decoded;
+    res.send(req.user);
+  });
+});
+
 router.post('/register', (req,res,next) => {
   let body = req.body;
   console.log(body);
