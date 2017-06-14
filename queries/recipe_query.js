@@ -15,6 +15,7 @@ function getRecipes(id){
       .orderBy('id', 'asc');
 
     // if(id){
+    //   if()
     //   query.where('recipes.id', id);
     // }
 
