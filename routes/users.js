@@ -45,7 +45,7 @@ router.post('/login', (req,res,next) => {
     let password = body.password;
 
     knex('users')
-    .select('id', 'username', 'hashed_password', 'full_name')
+    .select('id', 'username', 'hashed_password', 'full_name', 'email')
     .where('username', username)
     .then((data) => {
       if(data.length === 0){
@@ -55,7 +55,8 @@ router.post('/login', (req,res,next) => {
         let user = {
           id: data[0].id,
           username: data[0].username,
-          full_name: data[0].full_name
+          full_name: data[0].full_name,
+          email: data[0].email
         };
         var token = jwt.sign(user, process.env.JWT_KEY);
         res.cookie('token', token, {httpOnly: true});
@@ -65,6 +66,17 @@ router.post('/login', (req,res,next) => {
         return res.status(400).send('Bad username or password');
       }
     });
+});
+
+router.get('/', (req,res,next)=>{
+  jwt.verify(req.cookies.token, process.env.JWT_KEY, function (err,decoded) {
+    if (err) {
+      res.clearCookie('token');
+      return next(err);
+    }
+    req.user = decoded;
+    res.send(req.user);
+  });
 });
 
 module.exports = router;

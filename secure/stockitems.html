@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/masterlist.css">
   <title>Drinking Buddies</title>
 </head>
 <body>
@@ -32,44 +33,46 @@
     </nav>
   </header>
   <main>
-    <h1 id="title" class="center">Stock Items Directory</h1>
+    <h1 id="title" class="text-center">Stock Items Directory</h1>
 <div class="container query-bar">
   <div class="row">
     <form id="search">
-      <div class="col-md-2 col-sm-3 text-right toggles">
+      <div class="col-md-3 col-sm-3 text-right toggles">
         <input name="toggleCat" id="searchName" type="radio" value="name" checked/>
         <label for="searchName">Name </label>
         <input  name="toggleCat" id="searchCategory" type="radio" value="category"/>
         <label for="searchCategory">Category</label>
       </div><!-- closes toggles col -->
-      <div class="col-md-4 col-sm-6 text-right searchtext">
+      <div class="col-md-8 col-sm-6 text-right searchtext">
         <input id="searchBox" type="text" required placeholder="Enter a search term" class="form-control"/>
       </div><!-- closes searchtext col -->
-      <div class="col-md-2 col-sm-3 text-left searchButton">
+      <div class="col-md-1 col-sm-3 text-left searchButton">
         <button class="btn btn-default" type="submit">Search</button>
       </div> <!-- closes searchButton col -->
-      <div class="col-md-2 col-sm-12 text-center createButton">
+      <!-- <div class="col-md-2 col-sm-12 text-center createButton">
         <button class="btn btn-default" type="button">Create</button>
-    </div><!-- closes createButton col -->
+    </div> -->
+    <!-- closes createButton col -->
   </form>
 </div><!-- closes row -->
 
-  <span id="results">Gathering all stock items...</span>
 </div> <!-- closes query-bar container -->
-<!--
-    <div id="partyInfo" class="row">
-      <div class="col-md-2 col-sm-12">
-        <button class="btn btn-default loadButton">Load</button>
-        <button class="btn btn-default saveButton">Save</button>
-        <button class="btn btn-default clearButton">Clear</button>
-      </div>
 
-      <div class="input-group col-md-3 col-sm-12 partyInfo">
-        <span class="input-group-addon">Party Name</span>
-        <input type="text" id="partyName" class="form-control" placeholder="Party Name" aria-describedby="partyName" required>
-      </div>
+<div class="row stockitemsTable text-center">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table">
+      <thead>
+        <th>Category</th>
+        <th class="name">Name</th>
+        <th>Description</th>
+      </thead>
+      <span id="results">Gathering all stock items...</span>
+      <tbody id="tableBody">
 
-    </div> -->
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
   </main>
