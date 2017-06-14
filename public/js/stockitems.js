@@ -12,6 +12,7 @@ function getAll(event){
 
   $.ajax(options)
     .done((data) =>{
+      console.log(data);
       $tbody.empty();
       $results.html("");
       dataToTable(data);
@@ -57,19 +58,18 @@ function search(event){
 
 function dataToTable(data){
   for (let i=0; i<data.length; i++){
-  let numIngredients = data.length;
-  let $tr = $("<tr>");
-  $tr.addClass("animated");
-  $tr.addClass("slideInDown");
-  let $category = $("<td>");
-  $category.text(data[i].category);
-  let $name = $("<td>");
-  $name.text(data[i].name);
-  let $description = $("<td>");
-  $description.text(data[i].description);
-  $tr.append($category);
-  $tr.append($name);
-  $tr.append($description);
-  $tbody.append($tr);
+    let $tr = $("<tr>");
+    $tr.addClass("animated");
+    $tr.addClass("slideInDown");
+    let $category = $("<td>");
+    $category.text(data[i].category);
+    let $name = $("<td>");
+    $name.text(data[i].name);
+    let $description = $("<td>");
+    $description.text(data[i].description);
+    $tr.append($category);
+    $tr.append($name);
+    $tr.append($description);
+    $tbody.append($tr);
   }
 }

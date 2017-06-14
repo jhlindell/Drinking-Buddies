@@ -57,6 +57,30 @@ router.post('/login', (req,res,next) => {
     });
 });
 
+router.post('/search', (req, res, next)=>{
+  let body = req.body;
+  if(body.toggle === 'username'){
+    knex('users').select('id', 'username', 'full_name')
+    .where('username', '~*', body.name)
+    .then(result => {
+      console.log('data sent');
+      res.send(result);
+    })
+    .catch(err => {
+      next(err);
+    });
+  } else {
+    knex('users').select('id', 'username', 'full_name')
+    .where('full_name', '~*', body.name)
+    .then(result => {
+    res.send(result);
+    })
+    .catch(err => {
+      next(err);
+    });
+  }
+});
+
 router.get('/', (req,res,next)=>{
   jwt.verify(req.cookies.token, process.env.JWT_KEY, function (err,decoded) {
     if (err) {
@@ -67,5 +91,6 @@ router.get('/', (req,res,next)=>{
     res.send(req.user);
   });
 });
+
 
 module.exports = router;
