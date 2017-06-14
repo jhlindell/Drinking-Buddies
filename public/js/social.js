@@ -43,6 +43,7 @@ function getFriendInfo(){
   };
   $.ajax(options)
     .done((data) =>{
+      console.log(data);
       $('#myBuddies').html('Username: ' + data);
 
     })

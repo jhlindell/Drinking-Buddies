@@ -106,7 +106,7 @@ router.get('/friends', (req,res,next)=>{
     knex('users')
     .select('users.id', 'users.username', 'users.full_name', 'users.birthday', 'users.email')
     .innerJoin('friends', 'users.id', 'friends.friend_id')
-    .where('user_id', decoded.id)
+    .where('friends.user_id', decoded.id)
     .then(result => {
     res.send(result);
     })
