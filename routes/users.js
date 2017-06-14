@@ -74,7 +74,6 @@ router.post('/search', (req, res, next)=>{
     knex('users').select('id', 'username', 'full_name')
     .where('username', '~*', body.name)
     .then(result => {
-      console.log('data sent');
       res.send(result);
     })
     .catch(err => {
@@ -90,6 +89,28 @@ router.post('/search', (req, res, next)=>{
       next(err);
     });
   }
+});
+
+router.post('/friend', (req,res, next)=>{
+  let userid = req.body.user_id;
+  let friendid = req.body.friend_id;
+  knex.insert({
+    user_id: userid,
+    friend_id: friendid
+  })
+  .into('friends')
+  .returning('*')
+  .then((response)=>{
+    delete response.id;
+    res.send(response[0]);
+  });
+  // knex('users').select('id', 'username', 'full_name')
+  // .then(result => {
+  // res.send(result);
+  // })
+  // .catch(err => {
+  //   next(err);
+  // });
 });
 
 router.get('/', (req,res,next)=>{
