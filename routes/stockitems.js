@@ -29,7 +29,21 @@ router.post('/search', (req,res,next) => {
 
 //post a stock item to db
 router.post('/', (req,res,next) => {
-
+  var si = req.body;
+  knex('stock_items')
+    .select('stock_items.name')
+    .where('stock_items.name', '=', si.name)
+    .then(result=>{
+      if(result.length === 0){
+        knex('stock_items')
+        .insert(si)
+        .then(result=>{
+          res.send(si);
+        });
+      } else {
+        res.sendStatus(400);
+      }
+    });
 });
 
 module.exports = router;
