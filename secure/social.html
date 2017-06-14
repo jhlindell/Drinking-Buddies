@@ -30,25 +30,35 @@
     </nav>
   </header>
   <main>
-    <h1 id="myProfile" class="text-center">My Profile</h1>
-      <div id="username" class="text-center"> </div>
-      <div id="userfullname" class="text-center"> </div>
-      <div id="useremail" class="text-center"> </div>
-      <div id="useravatar" class="text-center"> </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+      <h1 id="myProfile" class="text-center">My Profile</h1>
+        <div id="username" class="text-center"> </div>
+        <div id="userfullname" class="text-center"> </div>
+        <div id="useremail" class="text-center"> </div>
+        <div id="useravatar" class="text-center"> </div>
+      </div>
 
-    <h1 class="text-center">My Drinking Buddies</h1>
-      <div class="col-md-3 form-group">
-        <h1 id="friend1" class="text-center">Friend 1</h1>
+      <div class="col-md-6 form-group">
+        <div class="row">
+        <h1 class="text-center">My Drinking Buddies</h1>
+          <div class="col-md-6 form-group">
+            <h1 id="friend1" class="text-center">Friend 1</h1>
+          </div>
+          <div class="col-md-6 form-group">
+            <h1 id="friend2" class="text-center">Friend 2</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <h1 id="friend3" class="text-center">Friend 3</h1>
+          </div>
+          <div class="col-md-6 form-group">
+            <h1 id="friend4" class="text-center">Friend 4</h1>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3 form-group">
-        <h1 id="friend2" class="text-center">Friend 2</h1>
-      </div>
-      <div class="col-md-3 form-group">
-        <h1 id="friend3" class="text-center">Friend 3</h1>
-      </div>
-      <div class="col-md-3 form-group">
-        <h1 id="friend4" class="text-center">Friend 4</h1>
-      </div>
+    </div>
 
 
     <h1 class="text-center">Find More Drinking Buddies</h1>
@@ -67,15 +77,11 @@
             <div class="col-md-1 col-sm-3 text-left searchButton">
               <button class="btn btn-default" type="submit">Search</button>
             </div> <!-- closes searchButton col -->
-            <!-- <div class="col-md-2 col-sm-12 text-center createButton">
-              <button class="btn btn-default" type="button">Create</button>
-          </div> -->
-          <!-- closes createButton col -->
         </form>
       </div><!-- closes row -->
     </div> <!-- closes query-bar container -->
 
-    <div class="row stockitemsTable text-center">
+    <div class="row friendsTable text-center">
       <div class="col-md-10 col-md-offset-1">
         <table class="table">
           <thead>
