@@ -5,7 +5,13 @@ const $username = $('#username');
 const $userfullname = $('#userfullname');
 const $useremail = $('#useremail');
 const $useravatar = $('#useravatar');
+let $userid = 0;
 $('#search').on('submit',search);
+$('#tableBody').mouseover(addButtonListener);
+
+function addButtonListener(){
+  $('.friendButton').on('click', addFriend);
+}
 
 
 function getUserInfo(){
@@ -16,11 +22,11 @@ function getUserInfo(){
   };
   $.ajax(options)
     .done((data) =>{
-      // let object = JSON.stringify(data);
       $username.html('Username: ' + data.username);
       $userfullname.html('Full Name: ' + data.full_name);
       $useremail.html('Email: ' + data.email);
       $useravatar.html('<img src =\' https://media.giphy.com/media/12EU871eV5HSq4/giphy.gif\'>');
+      $userid = data.id;
 
     })
     .fail((err) => {
@@ -70,7 +76,7 @@ function dataToTable(data){
     let $fullname = $("<td>");
     $fullname.text(data[0].full_name);
     let $friendButton = $("<td>");
-    $friendButton.html(`<button id="${data[0].id}">Add ${data[0].full_name} as Drinking Buddy</button>`);
+    $friendButton.html(`<button class="friendButton" id="${data[0].id}">Add ${data[0].full_name} as Drinking Buddy</button>`);
     $tr.append($username);
     $tr.append($fullname);
     $tr.append($friendButton);
@@ -85,11 +91,40 @@ function dataToTable(data){
       let $fullname = $("<td>");
       $fullname.text(data[i].full_name);
       let $friendButton = $("<td>");
-      $friendButton.html(`<button id="${data[i].id}">Add ${data[i].full_name} as Drinking Buddy</button>`);
+      $friendButton.html(`<button class="friendButton" id="${data[i].id}">Add ${data[i].full_name} as Drinking Buddy</button>`);
       $tr.append($username);
       $tr.append($fullname);
       $tr.append($friendButton);
       $tbody.append($tr);
     }
   }
+}
+
+function addFriend(event){
+  event.stopImmediatePropagation();
+  let friend_id = event.target.id;
+  console.log('friend_id', friend_id);
+  let user_id = $userid;
+  console.log('user_id', user_id);
+
+  let payload = {
+    user_id: user_id,
+    friend_id: friend_id
+  };
+  let options = {
+    contentType: 'application/json',
+    data: JSON.stringify(payload),
+    method: 'POST',
+    url: '/api/users/friend'
+  };
+  $.ajax(options)
+    .done((data) => {
+      console.log('posted');
+      $results.html('You have a new Drinking Buddy!!!!');
+    })
+    .fail((err) => {
+      console.log(err);
+      $results.html('Something wemt wrong connecting you to your Drinking Buddy...');
+    });
+
 }
