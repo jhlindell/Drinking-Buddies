@@ -60,7 +60,8 @@ router.post('/login', (req,res,next) => {
 router.post('/search', (req, res, next)=>{
   let body = req.body;
   if(body.toggle === 'username'){
-    knex('users').select('id', 'username', 'full_name')
+    knex('users')
+    .select('id', 'username', 'full_name')
     .where('username', '~*', body.name)
     .then(result => {
       res.send(result);
@@ -69,7 +70,8 @@ router.post('/search', (req, res, next)=>{
       next(err);
     });
   } else {
-    knex('users').select('id', 'username', 'full_name')
+    knex('users')
+    .select('id', 'username', 'full_name')
     .where('full_name', '~*', body.name)
     .then(result => {
     res.send(result);
@@ -93,13 +95,25 @@ router.post('/friend', (req,res, next)=>{
     delete response.id;
     res.send(response[0]);
   });
-  // knex('users').select('id', 'username', 'full_name')
-  // .then(result => {
-  // res.send(result);
-  // })
-  // .catch(err => {
-  //   next(err);
-  // });
+});
+
+router.get('/friends', (req,res,next)=>{
+  jwt.verify(req.cookies.token, process.env.JWT_KEY, function (err,decoded) {
+    if (err) {
+      res.clearCookie('token');
+      return next(err);
+    }
+    knex('users')
+    .select('users.id', 'users.username', 'users.full_name', 'users.birthday', 'users.email')
+    .innerJoin('friends', 'users.id', 'friends.friend_id')
+    .where('user_id', decoded.id)
+    .then(result => {
+    res.send(result);
+    })
+    .catch(err => {
+      next(err);
+    });
+  });
 });
 
 router.get('/', (req,res,next)=>{
@@ -112,6 +126,5 @@ router.get('/', (req,res,next)=>{
     res.send(req.user);
   });
 });
-
 
 module.exports = router;
