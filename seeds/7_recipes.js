@@ -7,6 +7,24 @@ exports.seed = function(knex, Promise) {
       instructions: "shake with ice and serve with upside down lime hull and mint sprig.",
       template: false,
       attributed_to: "Trader Vic",
+      posted_by: 4,
+      variant_of: null
+    },
+    {id:2,
+      name: "Jungle Bird",
+      description: "Perhaps the best tiki drink there is!",
+      instructions: "shake with ice and serve in glass with ice and a mint sprig.",
+      template: false,
+      attributed_to: "",
+      posted_by: 4,
+      variant_of: null
+    },
+    {id:3,
+      name: "Old Fashioned",
+      description: "The original cocktail",
+      instructions: "Build in a glass with ice.",
+      template: false,
+      attributed_to: "",
       posted_by: 1,
       variant_of: null
     }
