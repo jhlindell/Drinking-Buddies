@@ -103,9 +103,9 @@ router.get('/friends', (req,res,next)=>{
       res.clearCookie('token');
       return next(err);
     }
-    knex('friends')
-    .select('friend_id')
-    .innerJoin('users', 'friends.friend_id', 'users.id')
+    knex('users')
+    .select('users.id', 'users.username', 'users.full_name', 'users.birthday', 'users.email')
+    .innerJoin('friends', 'users.id', 'friends.friend_id')
     .where('user_id', decoded.id)
     .then(result => {
     res.send(result);
