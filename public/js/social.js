@@ -103,9 +103,7 @@ function dataToTable(data){
 function addFriend(event){
   event.stopImmediatePropagation();
   let friend_id = event.target.id;
-  console.log('friend_id', friend_id);
   let user_id = $userid;
-  console.log('user_id', user_id);
 
   let payload = {
     user_id: user_id,
@@ -119,7 +117,6 @@ function addFriend(event){
   };
   $.ajax(options)
     .done((data) => {
-      console.log('posted');
       $results.html('You have a new Drinking Buddy!!!!');
     })
     .fail((err) => {
