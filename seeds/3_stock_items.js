@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
 
     {si_id: 5,
     name: 'Cruzan Aged Light Rum',
-    description: 'Cruzan Aged Light Rum is a blend of rums aged one to four years in American oak casks—then treated to a ﬁltration process that brings out the full-bodied taste. The light color resembles that of chardonnay, a distinctive indication of its aging. And it’s smooth. Reaaallll smooootthhh.',
+    description: 'Cruzan Aged Light Rum is a blend of rums aged one to four years in American oak casks—then treated to a filtration process that brings out the full-bodied taste. The light color resembles that of chardonnay, a distinctive indication of its aging. And it’s smooth. Reaaallll smooootthhh.',
     category: 1},
 
     {si_id: 6,
