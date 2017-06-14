@@ -12,13 +12,11 @@ function getStockItems(id, toggle) {
     .orderBy('id', 'asc');
 
     if(id){
-      if(typeof id === 'number'){
+      if(toggle === 'internal'){
         query.where("si_id", id);
-      }
-      if (typeof id === 'string' && toggle === 'name'){
+      } else if(toggle === 'name'){
         query.where("stock_items.name", "~*", id);
-      }
-      if (typeof id === 'string' && toggle === 'category'){
+      } else if(toggle === 'category'){
         query.where("categories.name", "~*", id);
       }
     }
@@ -50,8 +48,8 @@ function getStock(id,toggle) {
         })
       ))//closes Promise
       .then(result => {
-        if(!isNaN(Number(id))){
-          return result[id-1];
+        if(toggle === 'internal'){
+          return result[id];
         } else {
           return result;
         }
