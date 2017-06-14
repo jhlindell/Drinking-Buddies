@@ -119,13 +119,13 @@ table > tbody > tr > td {
   background-color: #668D3C;
 }
 
-#recipeBox{
+#recipeBox, #entryBox {
   text-align: center;
   -vendor-animation-duration: 3s;
 
 }
 
-.recipeBox {
+.recipeBox, .entryBox {
   /*width: 60%;*/
   display: inline-block;
   float:none;
@@ -210,6 +210,14 @@ table > tbody > tr > td {
 
 #recipeBox > .recipeBox > .panel > .panel-body{
   padding: 20px 40px 20px 40px;
+}
+
+#entryBox > form > .recipeBox > .panel > .panel-body{
+  padding: 20px 40px 20px 40px;
+}
+
+#addStockItem {
+  padding-top: 10px;
 }
 
 .updateRecipeButton {
