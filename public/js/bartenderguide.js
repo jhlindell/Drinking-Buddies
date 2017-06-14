@@ -6,6 +6,7 @@ var counterIndex = 0;
 var tableBuilder = window.setInterval(populateGuide, 500);
 
 function populateGuide() {
+  try{
     let $recipeTr = $("<tr>");
     $recipeTr.addClass("animated");
     $recipeTr.addClass("slideInDown");
@@ -52,4 +53,8 @@ function populateGuide() {
     if(counterIndex === numRecipes){
       clearInterval(tableBuilder);
     }
+  } catch(err){
+    console.error('Table Build Error');
+    clearInterval(tableBuilder);
+  }
 }

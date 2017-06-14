@@ -50,8 +50,8 @@ function getStock(id,toggle) {
         })
       ))//closes Promise
       .then(result => {
-        if(typeof id === 'number'){
-          return result[0];
+        if(!isNaN(Number(id))){
+          return result[id-1];
         } else {
           return result;
         }

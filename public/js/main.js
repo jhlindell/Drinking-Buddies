@@ -275,13 +275,9 @@ function saveRecipes() {
 //populates recipebox with object info
 function populateRecipeBox() {
   let $selectedCard = $recipes.find(".panel-primary").parent();
-  console.log($selectedCard);
   let recipeNumber = $selectedCard[0].dataset.recipe;
-  console.log(recipeNumber);
-  console.log(recipeObjectArray.length);
   if (recipeNumber <= recipeObjectArray.length) {
     let recipe = recipeObjectArray[recipeNumber - 1];
-    console.log(recipe);
     if (recipe) {
       $("#drinkName").val(recipe.name);
       $("#instructions").val(recipe.instructions);

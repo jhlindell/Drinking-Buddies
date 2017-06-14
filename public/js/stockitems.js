@@ -2,6 +2,9 @@ $(document).ready(getAll);
 const $results = $('#results');
 const $tbody = $("#tableBody");
 $('#search').on('submit',search);
+$('#create').on('click', createEntryBox);
+$('#addStockItem').on('click', addStockItem);
+$('#cancelStockItem').on('click', closeEntryBox);
 
 function getAll(event){
   let options = {
@@ -12,7 +15,6 @@ function getAll(event){
 
   $.ajax(options)
     .done((data) =>{
-      console.log(data);
       $tbody.empty();
       $results.html("");
       dataToTable(data);
@@ -54,7 +56,42 @@ function search(event){
     });
 }
 
+function createEntryBox(event){
+  $('#entryBox').toggle();
+}
 
+function closeEntryBox(event){
+  $('#entryBox').hide();
+  $('#stockItemName').val('');
+  $('#catSelect').val(1);
+  $('#description').val('');
+}
+
+function addStockItem(event){
+  event.preventDefault();
+  let si = {};
+  si.name = $('#stockItemName').val();
+  si.category = $('#catSelect').val();
+  si.description = $('#description').val();
+  let options = {
+    contentType: 'application/json',
+    data: JSON.stringify(si),
+    method: 'POST',
+    url: '/api/stockitems/'
+  };
+  $.ajax(options)
+    .done((data) => {
+      window.alert(data.name + " successfully created!");
+      $('#entryBox').hide();
+      $('#stockItemName').val('');
+      $('#catSelect').val(1);
+      $('#description').val('');
+      }
+    )
+    .fail((err) => {
+      window.alert('That stock item already exists.');
+    });
+}
 
 function dataToTable(data){
   for (let i=0; i<data.length; i++){

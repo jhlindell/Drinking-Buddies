@@ -7,6 +7,8 @@ calculateMasterList();
 var numIngredients;
 var counterIndex = 0;
 var tableBuilder = window.setInterval(buildTable, 300);
+
+
 // sample ingredient object
 //      { measure:1.5,
 //       unit: "oz",
@@ -32,21 +34,26 @@ function calculateMasterList(array) {
 }
 
 function buildTable() {
-  let $tr = $("<tr>");
-  $tr.addClass("animated");
-  $tr.addClass("slideInDown");
-  let $measure = $("<td>");
-  $measure.text(masterList[counterIndex].measure.toFixed(1));
-  let $unit = $("<td>");
-  $unit.text(masterList[counterIndex].unit);
-  let $ingredientName = $("<td>");
-  $ingredientName.text(masterList[counterIndex].ingredientName);
-  $tr.append($measure);
-  $tr.append($unit);
-  $tr.append($ingredientName);
-  $tbody.append($tr);
-  counterIndex++;
-  if (counterIndex === numIngredients) {
+  try{
+    let $tr = $("<tr>");
+    $tr.addClass("animated");
+    $tr.addClass("slideInDown");
+    let $measure = $("<td>");
+    $measure.text(masterList[counterIndex].measure.toFixed(1));
+    let $unit = $("<td>");
+    $unit.text(masterList[counterIndex].unit);
+    let $ingredientName = $("<td>");
+    $ingredientName.text(masterList[counterIndex].ingredientName);
+    $tr.append($measure);
+    $tr.append($unit);
+    $tr.append($ingredientName);
+    $tbody.append($tr);
+    counterIndex++;
+    if (counterIndex === numIngredients) {
+      clearInterval(tableBuilder);
+    }
+  } catch(err) {
+    console.error("Table Build Error");
     clearInterval(tableBuilder);
   }
 }
