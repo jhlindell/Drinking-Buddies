@@ -7,8 +7,8 @@ exports.up = function(knex, Promise) {
     table.string('instructions').notNullable().defaultsTo('');
     table.boolean('template').notNullable().defaultsTo(false);
     table.string('attributed_to').notNullable().defaultsTo('');
-    table.integer('posted_by').references('id').inTable('users');
-    table.integer('variant_of').references('id').inTable('recipes');
+    table.integer('posted_by').references('id').inTable('users').onDelete('cascade').index();
+    table.integer('variant_of').references('id').inTable('recipes').onDelete('cascade').index();
   });
 };
 
