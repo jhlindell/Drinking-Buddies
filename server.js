@@ -15,6 +15,7 @@ const users = require('./routes/users');
 const stockitems = require('./routes/stockitems');
 const recipes = require('./routes/recipes');
 const menus = require('./routes/menus');
+const events = require('./routes/events');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -43,6 +44,7 @@ app.use(express.static(path.join('secure')));
 app.use('/api/stockitems', stockitems);
 app.use('/api/recipes', recipes);
 app.use('/api/menus', menus);
+app.use('/api/events', events);
 
 app.use((req, res, next) => {
   res.sendStatus(404);
