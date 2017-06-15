@@ -3,10 +3,11 @@
 const knex = require('../knex');
 const express = require('express');
 const router = express.Router();
-const queries = require('../queries/recipe_query');
+const queries = require('../queries/menu_query');
 
-router.get('/:id?', (req, res, next) => {
-  queries.getList(req.params.id, 'number')
+//get menu by menu id. id is not optional
+router.get('/:id', (req, res, next) => {
+  queries.getSingle(req.params.id)
   .then(result => {
     res.send(result);
   })
@@ -15,15 +16,15 @@ router.get('/:id?', (req, res, next) => {
   });
 });
 
-router.post('/search', (req,res,next) => {
-  queries.getList(req.body.id, 'string')
+//get menu by user id
+router.get('/user/:id', (req, res, next) => {
+  queries.getUserMenuList(req.params.id)
   .then(result => {
     res.send(result);
   })
   .catch(err => {
     next(err);
   });
-
 });
 
 module.exports = router;

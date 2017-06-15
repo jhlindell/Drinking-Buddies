@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
-const queries = require('../queries/user_query');
 const bcrypt = require ('bcrypt');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');

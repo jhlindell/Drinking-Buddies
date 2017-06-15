@@ -26,13 +26,11 @@ function login(event) {
   $.ajax(options)
   .done(()=>{
     console.log('successful login');
-    window.location.href = '/home.html';
+    window.location.href = '/social.html';
   })
   .fail((err)=>{
     window.alert("Login failed");
     window.location.href = '/index.html';
-    // console.log('error', err);
-    // console.log('Could not verify user');
   });
 }
 
@@ -52,13 +50,12 @@ function register(event){
   if(mm<10) {mm='0'+mm;}
   today21st = yyyy+'-'+mm+'-'+dd;
   const avatar = $('#avatar').val();
-  console.log('today21st', today21st);
-  console.log('birthday', birthday);
+
 
   if(password !== confirmPassword){
-    return window.alert('Passwords do not match');
+    return window.alert('Passwords do not match.');
   } else if(birthday > today21st){
-    return window.alert('You must be of legal drinking age to use Drinking Buddies');
+    return window.alert('You must be of legal drinking age to use Drinking Buddies!');
   }
   let payload = {
     username: username,
@@ -79,7 +76,7 @@ function register(event){
   .done(()=>{
     window.location.href = 'index.html';
   })
-  .fail(($xhr)=>{
-    console.log('Could not create new user');
+  .fail((err)=>{
+    console.error('User creation failed:',err);
   });
 }

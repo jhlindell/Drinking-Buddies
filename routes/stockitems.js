@@ -6,13 +6,23 @@ const router = express.Router();
 const queries = require('../queries/si_query');
 
 router.get('/:id?', (req, res, next) => {
-  queries.getStock(req.params.id)
-  .then(result => {
-    res.send(result);
-  })
-  .catch(err => {
-    next(err);
-  });
+  if(req.params.id){
+    queries.getStock(req.params.id, 'internal')
+    .then(result => {
+      res.send(result);
+    })
+    .catch(err => {
+      next(err);
+    });
+  } else {
+    queries.getStock()
+    .then(result => {
+      res.send(result);
+    })
+    .catch(err => {
+      next(err);
+    });
+  }
 });
 
 //post a search by name to db
