@@ -23,7 +23,7 @@ function getUserInfo(){
   };
   $.ajax(options)
     .done((data) =>{
-      $useravatar.html('<img src = \"' + data.avatar + '\"height = 200px width = 200px> ');
+      $useravatar.html('<img src = \"' + data.avatar + '\"height = 200px width = 200px > ');
       $username.html('Username: ' + data.username);
       $userfullname.html('Full Name: ' + data.full_name);
       $useremail.html('Email: ' + data.email);

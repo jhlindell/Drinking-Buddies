@@ -42,6 +42,12 @@ h1,h2,h3, nav{
   text-shadow: 3px 3px 25px #613318;
 }
 
+.profile{
+  font-size: 20px;
+
+}
+
+
 #loginPageBody{
   background-image: url('http://www.hqrestaurant.co.za/wp-content/uploads/2016/06/HQ_cocktail.jpg');
   background-position: absolute;
