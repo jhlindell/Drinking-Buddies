@@ -30,6 +30,19 @@ h1,h2,h3, nav{
   background-color: #B99C6B;
 }
 
+#logout:active{
+  background-color: chartreuse;
+}
+
+#logout{
+  color:white;
+  background-color: maroon;
+  position:fixed;
+     bottom:0;
+     right:0;
+
+}
+
 .sub-nav{
   color: white;
   font-size: 15px;
@@ -42,11 +55,13 @@ h1,h2,h3, nav{
   text-shadow: 3px 3px 25px #613318;
 }
 
-.profile{
-  font-size: 20px;
-
+.profile {
+  font-size: 30px;
 }
 
+.buddy {
+  font-size: 22px;
+}
 
 #loginPageBody{
   background-image: url('http://www.hqrestaurant.co.za/wp-content/uploads/2016/06/HQ_cocktail.jpg');

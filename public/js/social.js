@@ -9,6 +9,13 @@ const $useravatar = $('#useravatar');
 let $userid = 0;
 $('#search').on('submit',search);
 $('#tableBody').mouseover(addButtonListener);
+$('#logout').on('click', logout);
+
+function logout(){
+  document.clearCookie;
+  window.location.href = "index.html";
+  console.log('working')
+}
 
 function addButtonListener(){
   $('.friendButton').on('click', addFriend);
@@ -46,7 +53,7 @@ function getFriendInfo(){
   $.ajax(options)
     .done((data) =>{
       for (let i = 0; i < data.length; i++){
-        $(`#friend${i+1}`).html('<img src = \"' + data[i].avatar + '\"height = 100px width = 100px> '+ '<p>Username: ' + data[i].username+'<p>'+'<p>Full Name: ' + data[i].full_name+'<p>');
+        $(`#friend${i+1}`).html('<img src = \"' + data[i].avatar + '\"height = 100px width = 100px> '+ '<p>' + data[i].username + ' ' + data[i].full_name.substring(0,data[i].full_name.indexOf(' '))+'</p>');
       }
     })
     .fail((err) => {
@@ -95,7 +102,7 @@ function dataToTable(data){
     let $fullname = $("<td>");
     $fullname.text(data[0].full_name);
     let $friendButton = $("<td>");
-    $friendButton.html(`<button class="friendButton" id="${data[0].id}">Add ${data[0].full_name} as Drinking Buddy</button>`);
+    $friendButton.html(`<button class="btn friendButton" id="${data[0].id}">Add ${data[0].full_name} as Drinking Buddy</button>`);
     $tr.append($username);
     $tr.append($fullname);
     $tr.append($friendButton);
