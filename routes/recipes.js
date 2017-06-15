@@ -9,7 +9,7 @@ router.get('/:id?', (req, res, next) => {
   let id = req.params.id;
   var keyword;
   if(id){
-    keyword = 'internal';
+    keyword = 'number';
   }
   queries.getList(id, keyword)
   .then(result => {
@@ -22,7 +22,7 @@ router.get('/:id?', (req, res, next) => {
 
 router.post('/search', (req,res,next) => {
   let id = req.body.id;
-  let keyword = 'name';
+  let keyword = 'string';
   queries.getList(id, keyword)
   .then(result => {
     res.send(result);

@@ -15,9 +15,9 @@ function getRecipes(id,keyword){
       .orderBy('id', 'asc');
 
     if(id){
-      if(keyword === 'internal'){
+      if(keyword === 'number'){
         query.where('recipes.id',id);
-      } else if (keyword === 'name'){
+      } else if (keyword === 'string'){
         query.where('recipes.name','~*',id);
       }
     }
