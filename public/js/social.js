@@ -53,7 +53,7 @@ function getFriendInfo(){
   $.ajax(options)
     .done((data) =>{
       for (let i = 0; i < data.length; i++){
-        $(`#friend${i+1}`).html('<img src = \"' + data[i].avatar + '\"height = 100px width = 100px> '+ '<p>Username: ' + data[i].username+'<p>'+'<p>Full Name: ' + data[i].full_name+'<p>');
+        $(`#friend${i+1}`).html('<img src = \"' + data[i].avatar + '\"height = 100px width = 100px> '+ '<p>' + data[i].username + ' ' + data[i].full_name.substring(0,data[i].full_name.indexOf(' '))+'</p>');
       }
     })
     .fail((err) => {
