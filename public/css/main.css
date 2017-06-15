@@ -3,6 +3,24 @@ body {
   font-family: 'Amatic SC', cursive;
 }
 
+h1,h2,h3, nav{
+  font-family: 'Fredericka the Great', cursive;
+}
+
+#mission{
+  font-size: 35px;
+  text-align: center;
+  font-family: 'Fredericka the Great', cursive;
+  color: #613318;
+  text-shadow: 1px 1px 2px #B99C6B;
+}
+
+.bigFont{
+  font-size: 55px;
+  color: black;
+  text-shadow: 1px 1px 5px #613318;
+}
+
 .toggles {
   font-size: 30px;
 }
