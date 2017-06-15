@@ -22,7 +22,7 @@ exports.seed = function(knex, Promise) {
     {id:3,
       name: "Old Fashioned",
       description: "The original cocktail",
-      instructions: "Build in a glass with ice.",
+      instructions: "Build in a glass with ice and serve in a double rocks glass.",
       template: false,
       attributed_to: "",
       posted_by: 1,

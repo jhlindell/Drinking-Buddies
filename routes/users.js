@@ -6,21 +6,8 @@ const bcrypt = require ('bcrypt');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 
-router.get('/', (req,res,next)=>{
-  jwt.verify(req.cookies.token, process.env.JWT_KEY, function (err,decoded) {
-    if (err) {
-      res.clearCookie('token');
-      return next(err);
-    }
-    req.user = decoded;
-    console.log(decoded)
-    res.send(req.user);
-  });
-});
-
 router.post('/register', (req,res,next) => {
   let body = req.body;
-  console.log(body);
 
   bcrypt.hash(body.password, saltRounds, (err, hash)=>{
     knex.insert({
@@ -99,15 +86,18 @@ router.post('/search', (req, res, next)=>{
 router.post('/friend', (req,res, next)=>{
   let userid = req.body.user_id;
   let friendid = req.body.friend_id;
+
   knex.insert({
     user_id: userid,
     friend_id: friendid
   })
   .into('friends')
   .returning('*')
-  .then((response)=>{
-    delete response.id;
-    res.send(response[0]);
+  .then((data)=>{
+    res.send('You have a new Drinking Buddy!!!!');
+  })
+  .catch((err) => {
+    res.send('You are already friends with this buddy.');
   });
 });
 

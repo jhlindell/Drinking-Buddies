@@ -6,28 +6,25 @@ const router = express.Router();
 const queries = require('../queries/si_query');
 
 router.get('/:id?', (req, res, next) => {
-  if(req.params.id){
-    queries.getStock(req.params.id, 'internal')
-    .then(result => {
-      res.send(result);
-    })
-    .catch(err => {
-      next(err);
-    });
-  } else {
-    queries.getStock()
-    .then(result => {
-      res.send(result);
-    })
-    .catch(err => {
-      next(err);
-    });
+  let id = req.params.id;
+  var keyword;
+  if(id){
+    keyword = 'internal';
   }
+  queries.getStock(id, keyword)
+    .then(result => {
+    res.send(result);
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
 //post a search by name to db
 router.post('/search', (req,res,next) => {
-  queries.getStock(req.body.id, req.body.toggle)
+  let id = req.body.term;
+  let keyword = req.body.toggle;
+  queries.getStock(id, keyword)
   .then(result => {
     res.send(result);
   })

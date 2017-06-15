@@ -146,9 +146,10 @@
         </div>
       </div>
 
-      <!-- <span id="results">Gathering all recipes...</span> -->
+      <div id="results"></div>
       <div id="recipes" class="row">
-        <div id="cardClone" class="col-md-4 col-sm-12 animated rollIn fadeOutRight" style="display: none;">
+
+        <div id="cardClone" class="col-md-4 col-sm-6 animated rollIn fadeOutRight" style="display: none;">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Recipe</h3>
@@ -158,15 +159,15 @@
 
               </div>
               <div class="row recipeButtonRow">
-                <button class="updateRecipe">Update Recipe</button>
-                <button class="deleteButton">Delete Recipe</button>
+                <select class="selectmenu form-control unit">
+                  <option id="favorites">Favorites</option>
+                </select>
+                <button class="addButton">Add Recipe to Menu</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="pageBottom">
     </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
