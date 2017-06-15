@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.specificType('hashed_password', 'char(60)').notNullable();
     table.date('birthday').notNullable();
     table.boolean('admin').defaultTo(false);
+    table.string('avatar').defaultTo('');
   });
 };
 

@@ -1,6 +1,6 @@
 const knex = require('../knex');
 
-function getRecipes(id, type){
+function getRecipes(id,keyword){
   let query = knex('recipes')
     .select('recipes.id',
       'recipes.name',
@@ -14,17 +14,11 @@ function getRecipes(id, type){
       .innerJoin('users', 'recipes.posted_by', 'users.id')
       .orderBy('id', 'asc');
 
-    // if(id){
-    //   if()
-    //   query.where('recipes.id', id);
-    // }
-
     if(id){
-      if(type === 'number'){
-        query.where("recipes.id", id);
-      }
-      if (type === 'string'){
-        query.where("recipes.name", "~*", id);
+      if(keyword === 'number'){
+        query.where('recipes.id',id);
+      } else if (keyword === 'string'){
+        query.where('recipes.name','~*',id);
       }
     }
     return query;
@@ -50,8 +44,8 @@ function getIngredients(id){
     });
 }
 
-function getList(id, type) {
-  return getRecipes(id, type)
+function getList(id, keyword) {
+  return getRecipes(id, keyword)
     .then(items =>
       Promise.all(items.map(item =>
         getIngredients(item.id)
@@ -60,7 +54,9 @@ function getList(id, type) {
           return item;
         })
       ))
-      .then(result => id ? result[0] : result)
+      .then(result =>{
+        return result;
+      })
     );
 }
 

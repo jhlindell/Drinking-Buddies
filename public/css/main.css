@@ -16,11 +16,37 @@ h1,h2,h3, nav{
   text-shadow: 2px 2px 15px black;
 }
 
+.nav-pills li a{
+  color: white;
+  font-size: 30px;
+}
+
+/*.nav-pills .main-nav{
+  color: white;
+  font-size: 30px;
+}*/
+
+.child-active{
+  background-color: #B99C6B;
+}
+
+.sub-nav{
+  color: white;
+  font-size: 15px;
+  font-family: 'Amatic SC', cursive;
+}
+
 .bigFont{
   font-size: 55px;
   color: yellow;
   text-shadow: 3px 3px 25px #613318;
 }
+
+.profile{
+  font-size: 20px;
+
+}
+
 
 #loginPageBody{
   background-image: url('http://www.hqrestaurant.co.za/wp-content/uploads/2016/06/HQ_cocktail.jpg');
@@ -43,10 +69,6 @@ h1,h2,h3, nav{
 .navbar-default {
   background-color: #613318;
 }
-.nav-pills li a{
-  color: white;
-  font-size: 30px;
-}
 
 .panel-primary {
   background-image: url('../images/ricepaper_v3.png');
@@ -64,8 +86,14 @@ table > tbody > tr > td {
   margin: 0 5px;
 }
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
-  background-color: #B99C6B;
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus{
+  /*background-color: #B99C6B;*/
+  background-color: chocolate;
+  color: white;
+}
+.nav-pills>li>a:hover,.nav-pills>li.active>a:hover{
+  /*background-color: #B99C6B;*/
+  background-color: burlywood;
   color: white;
 }
 

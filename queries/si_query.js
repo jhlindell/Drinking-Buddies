@@ -1,6 +1,6 @@
 const knex = require('../knex');
 
-function getStockItems(id, toggle) {
+function getStockItems(id, keyword) {
   let query = knex('stock_items')
     .select(
       'stock_items.si_id as id',
@@ -12,11 +12,11 @@ function getStockItems(id, toggle) {
     .orderBy('id', 'asc');
 
     if(id){
-      if(toggle === 'internal'){
+      if(keyword === 'internal'){
         query.where("si_id", id);
-      } else if(toggle === 'name'){
+      } else if(keyword === 'name'){
         query.where("stock_items.name", "~*", id);
-      } else if(toggle === 'category'){
+      } else if(keyword === 'category'){
         query.where("categories.name", "~*", id);
       }
     }
@@ -37,8 +37,8 @@ function getTags(id) {
     });
 }
 
-function getStock(id,toggle) {
-  return getStockItems(id,toggle)
+function getStock(id, keyword) {
+  return getStockItems(id, keyword)
     .then(items =>
       Promise.all(items.map(item =>
         getTags(item.id)
@@ -48,11 +48,7 @@ function getStock(id,toggle) {
         })
       ))//closes Promise
       .then(result => {
-        if(toggle === 'internal'){
-          return result[id];
-        } else {
-          return result;
-        }
+        return result;
       })
     );
 }
