@@ -33,76 +33,85 @@
   <main>
     <div class="container">
       <div class="row">
-        <div class="col-md-4 form-group">
-          <h1 id="myProfile" class="text-center">My Profile</h1>
-          <div id="useravatar" class="text-center"> </div>
-          <div id="username" class="text-center"> </div>
-          <div id="userfullname" class="text-center"> </div>
-          <div id="useremail" class="text-center"> </div>
-        </div>
-
-        <div class="col-md-8 form-group">
-          <div class="row">
-            <h1 class="text-center">My Drinking Buddies</h1>
-            <div class="col-md-2 form-group text-center" id="friend1"> </div>
-            <div class="col-md-2 form-group text-center" id="friend2"> </div>
-            <div class="col-md-2 form-group text-center" id="friend3"> </div>
-            <div class="col-md-2 form-group text-center" id="friend4"> </div>
-            <div class="col-md-2 form-group text-center" id="friend5"> </div>
-            <div class="col-md-2 form-group text-center" id="friend6"> </div>
-
+        <div class="col-md-4">
+          <div class="panel panel-default" style="min-height: 420px;">
+            <div class="panel-heading">
+              <h2 id="myProfile" class="panel-title text-center">My Profile</h2>
+            </div>
+            <div class="panel-body">
+              <div id="useravatar" class="profile text-center"> </div>
+              <div id="username" class="profile"> </div>
+              <div id="userfullname" class="profile"> </div>
+              <div id="useremail" class="profile"> </div>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-2 form-group text-center" id="friend7"> </div>
-          <div class="col-md-2 form-group text-center" id="friend8"> </div>
-          <div class="col-md-2 form-group text-center" id="friend9"> </div>
-          <div class="col-md-2 form-group text-center" id="friend10"> </div>
-          <div class="col-md-2 form-group text-center" id="friend11"> </div>
-          <div class="col-md-2 form-group text-center" id="friend12"> </div>
+
+        <div class="col-md-8">
+          <div class="panel panel-default" style="min-height: 420px;">
+            <div class="panel-heading">
+              <h2 id="myBuddies" class="panel-title text-center">My Drinking Buddies</h2>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 buddy" id="friend1"> </div>
+                <div class="col-md-3 buddy" id="friend2"> </div>
+                <div class="col-md-3 buddy" id="friend3"> </div>
+                <div class="col-md-3 buddy" id="friend4"> </div>
+                <div class="col-md-3 buddy" id="friend5"> </div>
+                <div class="col-md-3 buddy" id="friend6"> </div>
+                <div class="col-md-3 buddy" id="friend7"> </div>
+                <div class="col-md-3 buddy" id="friend8"> </div>
+                <div class="col-md-3 buddy" id="friend9"> </div>
+                <div class="col-md-3 buddy" id="friend10"> </div>
+                <div class="col-md-3 buddy" id="friend11"> </div>
+                <div class="col-md-3 buddy" id="friend12"> </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
 
-      <h1 class="text-center">Find More Drinking Buddies</h1>
-      <div class="row query-bar">
-        <form id="search">
-          <div class="col-md-3 col-sm-3 text-right toggles">
-            <input name="toggleCat" id="searchUser" type="radio" value="username" checked/>
-            <label for="searchUser">User Name</label>
-            <input name="toggleCat" id="searchFull" type="radio" value="fullname" />
-            <label for="searchFull">Full Name</label>
-          </div>
-          <!-- closes toggles col -->
-          <div class="col-md-8 col-sm-6 text-right searchtext">
-            <input id="searchBox" type="text" required placeholder="Enter a user name or friend's name" class="form-control" />
-          </div>
-          <!-- closes searchtext col -->
-          <div class="col-md-1 col-sm-3 text-left searchButton">
-            <button class="btn btn-default" type="submit">Search</button>
-          </div>
-          <!-- closes searchButton col -->
-        </form>
-      </div>
-      <!-- closes row -->
-
-      <div class="row friendsTable text-center">
-        <div class="col-md-10 col-md-offset-1">
-          <table class="table">
-            <thead>
-              <th class="text-center">User Name</th>
-              <th class="name text-center">Full Name</th>
-              <th class="text-center">Drinking Buddy?</th>
-            </thead>
-            <div id="results"></div>
-            <tbody id="tableBody">
-
-            </tbody>
-          </table>
+        <h1 class="text-center">Find More Drinking Buddies</h1>
+        <div class="row query-bar">
+          <form id="search">
+            <div class="col-md-3 col-sm-4 text-right toggles">
+              <input name="toggleCat" id="searchUser" type="radio" value="username" checked/>
+              <label for="searchUser">User Name</label>
+              <input name="toggleCat" id="searchFull" type="radio" value="fullname" />
+              <label for="searchFull">Full Name</label>
+            </div>
+            <!-- closes toggles col -->
+            <div class="col-md-6 col-sm-5 text-right searchtext">
+              <input id="searchBox" type="text" required placeholder="Enter a user name or friend's name" class="form-control" />
+            </div>
+            <!-- closes searchtext col -->
+            <div class="col-md-1 col-sm-3 text-left searchButton">
+              <button class="btn btn-default center" type="submit">Search</button>
+            </div>
+            <!-- closes searchButton col -->
+          </form>
         </div>
+        <!-- closes row -->
+
+        <div class="row friendsTable text-center buddy">
+          <div class="col-md-10 col-md-offset-1">
+            <table class="table panel-primary">
+              <thead>
+                <th class="text-center">User Name</th>
+                <th class="name text-center">Full Name</th>
+                <th class="text-center">Drinking Buddy?</th>
+              </thead>
+              <div id="results"></div>
+              <tbody id="tableBody">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- closes query-bar container -->
       </div>
-      <!-- closes query-bar container -->
-    </div>
 
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

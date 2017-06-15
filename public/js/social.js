@@ -95,7 +95,7 @@ function dataToTable(data){
     let $fullname = $("<td>");
     $fullname.text(data[0].full_name);
     let $friendButton = $("<td>");
-    $friendButton.html(`<button class="friendButton" id="${data[0].id}">Add ${data[0].full_name} as Drinking Buddy</button>`);
+    $friendButton.html(`<button class="btn friendButton" id="${data[0].id}">Add ${data[0].full_name} as Drinking Buddy</button>`);
     $tr.append($username);
     $tr.append($fullname);
     $tr.append($friendButton);
