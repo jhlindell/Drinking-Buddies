@@ -1,4 +1,5 @@
 $(document).ready(getUserInfo);
+$(document).ready(getFriendInfo);
 const $results = $('#results');
 const $tbody = $("#tableBody");
 const $username = $('#username');
@@ -27,6 +28,28 @@ function getUserInfo(){
       $useremail.html('Email: ' + data.email);
       $useravatar.html('<img src =\' https://media.giphy.com/media/12EU871eV5HSq4/giphy.gif\'>');
       $userid = data.id;
+
+
+    })
+    .fail((err) => {
+      console.log(err);
+    });
+}
+
+function getFriendInfo(){
+  let options = {
+    contentType: 'application/json',
+    method: 'GET',
+    url: '/api/users/friends'
+  };
+  $.ajax(options)
+    .done((data) =>{
+      console.log(data);
+      for (let i = 0; i < data.length; i++){
+        $(`#friend${i+1}`).html('<p>Username: ' + data[i].username+'<p>'+'<p>Full Name: ' + data[i].full_name+'<p>'+ '<img src =\' https://media.giphy.com/media/RQSuZfuylVNAY/giphy.gif\' height = 100px width = 100px>');
+
+
+      }
 
     })
     .fail((err) => {
@@ -118,6 +141,7 @@ function addFriend(event){
   $.ajax(options)
     .done((data) => {
       $results.html('You have a new Drinking Buddy!!!!');
+      getFriendInfo();
     })
     .fail((err) => {
       console.log(err);
