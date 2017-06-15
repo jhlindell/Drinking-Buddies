@@ -3,16 +3,34 @@ body {
   font-family: 'Amatic SC', cursive;
 }
 
+<<<<<<< HEAD
+h1,h2,h3, nav{
+  font-family: 'Fredericka the Great', cursive;
+}
+
+#mission{
+  font-size: 35px;
+  text-align: center;
+  font-family: 'Fredericka the Great', cursive;
+  color: #613318;
+  text-shadow: 1px 1px 2px #B99C6B;
+}
+
+.bigFont{
+  font-size: 55px;
+  color: black;
+  text-shadow: 1px 1px 5px #613318;
+}
+
 #loginPage{
   background-image: url('http://www.hqrestaurant.co.za/wp-content/uploads/2016/06/HQ_cocktail.jpg');
-  font-family: 'Amatic SC', cursive;
-  /*background-size: cover;*/
   background-position: absolute;
     top: 50%;
     left: 50%;
     width: auto;
     height: auto;
 }
+
 .toggles {
   font-size: 30px;
 }
