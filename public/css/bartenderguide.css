@@ -1,8 +1,4 @@
-/*.recipeTable {
-  text-align: center;
-  display: inline-block;
-  float: none;
-}*/
+
 
 body {
   font-size: 25px;
@@ -20,10 +16,6 @@ body {
 td {
   background-image: url('../images/ricepaper_v3.png');
 }
-
-/*h2 {
-  text-decoration: underline;
-}*/
 
 tr {
   border-bottom: 1px solid black;
