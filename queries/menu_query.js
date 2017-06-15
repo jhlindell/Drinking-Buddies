@@ -26,7 +26,6 @@ function getMenuItems(id) {
 function getSingle(id) {
   return getMenu(id)
     .then(function(menu) {
-      console.log(menu);
       menu[0].recipes = [];
       return getMenuItems(menu[0].id)
         .then(function(menu_items) {
