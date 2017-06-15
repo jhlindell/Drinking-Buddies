@@ -30,6 +30,19 @@ h1,h2,h3, nav{
   background-color: #B99C6B;
 }
 
+#logout:active{
+  background-color: chartreuse;
+}
+
+#logout{
+  color:white;
+  background-color: maroon;
+  position:fixed;
+     bottom:0;
+     right:0;
+
+}
+
 .sub-nav{
   color: white;
   font-size: 15px;
