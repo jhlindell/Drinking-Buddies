@@ -157,6 +157,20 @@ exports.seed = function(knex, Promise) {
     description: 'orange flavored liquor',
     category: 7},
 
+    {si_id: 32,
+    name: 'Pineapple Juice',
+    description: "Jus d'ananas",
+    category: 9},
+
+    {si_id: 33,
+    name: 'Campari',
+    description: 'The Amaro',
+    category: 7},
+
+    {si_id: 34,
+    name: 'Luxardo Cocktail Cherry',
+    description: 'Deeply red and deeply flavored, these cocktail cherries are a treat in and of themselves.',
+    category: 9},
     // {si_id: ,
     // name: '',
     // description: '',

@@ -1,9 +1,13 @@
 $(document).ready(getAll);
 const $results = $('#results');
-$('#search').on('submit',search);
+$('#search').on('submit', search);
 $('#create').on('click', createRecipeBox);
+var $recipes = $("#recipes");
+var recipes = [];
+var recipeCounter = 0;
+var removedCardNumbers = [];
 
-function getAll(event){
+function getAll(event) {
   let options = {
     contentType: 'application/json',
     method: 'GET',
@@ -11,15 +15,18 @@ function getAll(event){
   };
 
   $.ajax(options)
-    .done((data) =>{
-      $results.html(JSON.stringify(data));
+    .done((data) => {
+      // $results.html(JSON.stringify(data));
+      recipes = data;
+      $('#results').val('');
+      initializePage(recipes);
     })
     .fail((err) => {
       console.log(err);
     });
 }
 
-function search(event){
+function search(event) {
   event.preventDefault();
   $results.html('Gathering search results...');
   let $value = $('#searchBox').val();
@@ -34,10 +41,12 @@ function search(event){
   };
   $.ajax(options)
     .done((data) => {
-      if(data.length === 0){
+      if (data.length === 0) {
         $results.html('Your search did not return anything.');
       } else {
-        $results.html(JSON.stringify(data));
+        // $results.html(JSON.stringify(data));
+        recipes = data;
+        console.log(recipes);
       }
     })
     .fail((err) => {
@@ -47,7 +56,7 @@ function search(event){
 
 }
 
-function createRecipeBox(event){
+function createRecipeBox(event) {
   $('#recipeBox').toggle();
 }
 
@@ -61,34 +70,30 @@ function initializePage(recipes) {
 
 //adds another recipe card to the #recipes row
 function addRecipeCard(event) {
-
-  if (recipeCounter < 6) {
-    recipeCounter++;
-    let $clone = $("#cardClone").clone();
-    $clone.toggle();
-    $clone.removeAttr("id");
-    $clone.addClass("recipeCards");
-    if (removedCardNumbers.length) {
-      removedCardNumbers.sort();
-      let cardNum = removedCardNumbers.shift();
-      $clone.attr("data-recipe", cardNum);
-      $clone.find(".panel-title").html("Recipe " + cardNum);
-    } else {
-      $clone.attr("data-recipe", recipeCounter);
-      $clone.find(".panel-title").html("Recipe " + recipeCounter);
-    }
-    $clone.appendTo($recipes);
-    if (recipeCounter === 6) {
-      $("#addRecipeButton").toggle();
-    }
-    document.getElementById('pageBottom').scrollIntoView();
+  recipeCounter++;
+  let $clone = $("#cardClone").clone();
+  $clone.toggle();
+  $clone.removeAttr("id");
+  $clone.addClass("recipeCards");
+  if (removedCardNumbers.length) {
+    removedCardNumbers.sort();
+    let cardNum = removedCardNumbers.shift();
+    $clone.attr("data-recipe", cardNum);
+    $clone.find(".panel-title").html("Recipe " + cardNum);
+  } else {
+    $clone.attr("data-recipe", recipeCounter);
+    $clone.find(".panel-title").html("Recipe " + recipeCounter);
   }
+  $clone.appendTo($recipes);
+  document.getElementById('pageBottom').scrollIntoView();
 }
 
 function populateCard(num) {
+  console.log(num);
   let $selectedCard = $recipes.find("[data-recipe='" + num + "']");
+  console.log($selectedCard);
   let recipeNumber = $selectedCard[0].dataset.recipe;
-  let recipe = recipeObjectArray[recipeNumber - 1];
+  let recipe = recipes[recipeNumber - 1];
   let $recipeBody = $selectedCard.find(".recipeBody");
   $recipeBody.empty();
   //drink name

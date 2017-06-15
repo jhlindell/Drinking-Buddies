@@ -28,13 +28,13 @@ function getIngredients(id){
   return knex('ingredients')
     .select(
       'ingredients.id',
-      'units.name',
+      'units.name as unit',
       'ingredients.measure',
-      'stock_items.name',
+      'stock_items.name as ingredientName',
       'recipe_id',
       'ingredients.order'
     )
-    .innerJoin('units', 'units.id', 'ingredients.unit')
+    .innerJoin('units', 'ingredients.unit', 'units.id')
     .innerJoin('stock_items', 'ingredients.stock_item_id', 'stock_items.si_id')
     .innerJoin('recipes', 'recipes.id', 'ingredients.recipe_id')
     .where('ingredients.recipe_id', id)
