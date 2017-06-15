@@ -22,12 +22,11 @@ function getGuestList(id) {
 function get(id) {
   return getEvent(id)
     .then(function(event) {
-      event[0].guestList = [];
-      return getGuestList(event[0].id)
-        .then(function(guests) {
-          event[0].guestList = guests;
-        })
-        .then(function(result) {
+      return Promise.all([getGuestList(event[0].id),   menuQuery.getSingle(event[0].menu_id)])
+        .then(function(data) {
+          event[0].guestList = data[0];
+          event[0].menu = data[1];
+          console.log(event[0]);
           return event[0];
         });
     });

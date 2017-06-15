@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
       date: '06/15/2017',
       guestCount: 5,
       host_id: 4,
-      menu_id: 3
+      menu_id: 4
     }
   ];
 
