@@ -272,7 +272,7 @@ table > tbody > tr > td {
   padding: 20px 40px 20px 40px;
 }
 
-#addStockItem {
+#addStockItem, #cancelStockItem {
   padding-top: 10px;
 }
 

@@ -49,13 +49,11 @@ function register(event){
   if(dd<10) {dd='0'+dd;}
   if(mm<10) {mm='0'+mm;}
   today21st = yyyy+'-'+mm+'-'+dd;
-  console.log('today21st', today21st);
-  console.log('birthday', birthday);
 
   if(password !== confirmPassword){
-    return window.alert('Passwords do not match');
+    return window.alert('Passwords do not match.');
   } else if(birthday > today21st){
-    return window.alert('You must be of legal drinking age to use Drinking Buddies');
+    return window.alert('You must be of legal drinking age to use Drinking Buddies!');
   }
   const options = {
     contentType: 'application/json',
@@ -68,7 +66,7 @@ function register(event){
   .done(()=>{
     window.location.href = 'index.html';
   })
-  .fail(($xhr)=>{
-    console.log('Could not create new user');
+  .fail((err)=>{
+    console.error('User creation failed:',err);
   });
 }
