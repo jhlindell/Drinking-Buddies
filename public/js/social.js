@@ -45,13 +45,9 @@ function getFriendInfo(){
   };
   $.ajax(options)
     .done((data) =>{
-      console.log(data)
       for (let i = 0; i < data.length; i++){
         $(`#friend${i+1}`).html('<img src = \"' + data[i].avatar + '\"height = 100px width = 100px> '+ '<p>Username: ' + data[i].username+'<p>'+'<p>Full Name: ' + data[i].full_name+'<p>');
-
-
       }
-
     })
     .fail((err) => {
       console.log(err);
@@ -77,7 +73,7 @@ function search(event){
     .done((data) => {
       $tbody.empty();
       if(data.length === 0){
-        $results.html('Your search did not return anything.');
+        $results.html('Your search did not return any users.');
       } else {
         $results.html("");
         dataToTable(data);
@@ -85,8 +81,7 @@ function search(event){
       }
     })
     .fail((err) => {
-      console.log(err);
-      $results.html('Your search did not return anything.');
+      console.error('User search failed:',err);
     });
 }
 
@@ -141,12 +136,11 @@ function addFriend(event){
   };
   $.ajax(options)
     .done((data) => {
-      $results.html('You have a new Drinking Buddy!!!!');
+      window.alert(data);
       getFriendInfo();
     })
     .fail((err) => {
-      console.log(err);
-      $results.html('Something went wrong connecting you to your Drinking Buddy...');
+      console.error('User add failed:',err);
     });
 
 }

@@ -30,7 +30,7 @@ function search(event){
   let $value = $('#searchBox').val();
   let $toggle = $("input[name='toggleCat']:checked").val();
   let payload = {
-    id: $value,
+    term: $value,
     toggle: $toggle
   };
   let options = {
