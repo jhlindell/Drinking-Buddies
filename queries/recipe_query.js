@@ -1,6 +1,6 @@
 const knex = require('../knex');
 
-function getRecipes(id){
+function getRecipes(id, type){
   let query = knex('recipes')
     .select('recipes.id',
       'recipes.name',
@@ -20,10 +20,10 @@ function getRecipes(id){
     // }
 
     if(id){
-      if(typeof id === 'number'){
+      if(type === 'number'){
         query.where("recipes.id", id);
       }
-      if (typeof id === 'string'){
+      if (type === 'string'){
         query.where("recipes.name", "~*", id);
       }
     }
@@ -50,8 +50,8 @@ function getIngredients(id){
     });
 }
 
-function getList(id) {
-  return getRecipes(id)
+function getList(id, type) {
+  return getRecipes(id, type)
     .then(items =>
       Promise.all(items.map(item =>
         getIngredients(item.id)
