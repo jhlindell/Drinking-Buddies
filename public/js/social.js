@@ -23,10 +23,11 @@ function getUserInfo(){
   };
   $.ajax(options)
     .done((data) =>{
+      $useravatar.html('<img src = \"' + data.avatar + '\"height = 200px width = 200px> ');
       $username.html('Username: ' + data.username);
       $userfullname.html('Full Name: ' + data.full_name);
       $useremail.html('Email: ' + data.email);
-      $useravatar.html('<img src =\' https://media.giphy.com/media/12EU871eV5HSq4/giphy.gif\'>');
+
       $userid = data.id;
 
 
@@ -44,13 +45,9 @@ function getFriendInfo(){
   };
   $.ajax(options)
     .done((data) =>{
-      console.log(data);
       for (let i = 0; i < data.length; i++){
-        $(`#friend${i+1}`).html('<p>Username: ' + data[i].username+'<p>'+'<p>Full Name: ' + data[i].full_name+'<p>'+ '<img src =\' https://media.giphy.com/media/RQSuZfuylVNAY/giphy.gif\' height = 100px width = 100px>');
-
-
+        $(`#friend${i+1}`).html('<img src = \"' + data[i].avatar + '\"height = 100px width = 100px> '+ '<p>Username: ' + data[i].username+'<p>'+'<p>Full Name: ' + data[i].full_name+'<p>');
       }
-
     })
     .fail((err) => {
       console.log(err);
@@ -76,7 +73,7 @@ function search(event){
     .done((data) => {
       $tbody.empty();
       if(data.length === 0){
-        $results.html('Your search did not return anything.');
+        $results.html('Your search did not return any users.');
       } else {
         $results.html("");
         dataToTable(data);
@@ -84,8 +81,7 @@ function search(event){
       }
     })
     .fail((err) => {
-      console.log(err);
-      $results.html('Your search did not return anything.');
+      console.error('User search failed:',err);
     });
 }
 
@@ -140,12 +136,11 @@ function addFriend(event){
   };
   $.ajax(options)
     .done((data) => {
-      $results.html('You have a new Drinking Buddy!!!!');
+      window.alert(data);
       getFriendInfo();
     })
     .fail((err) => {
-      console.log(err);
-      $results.html('Something wemt wrong connecting you to your Drinking Buddy...');
+      console.error('User add failed:',err);
     });
 
 }

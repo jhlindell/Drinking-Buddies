@@ -35,10 +35,10 @@
       <div class="row">
         <div class="col-md-4 form-group">
           <h1 id="myProfile" class="text-center">My Profile</h1>
+          <div id="useravatar" class="text-center"> </div>
           <div id="username" class="text-center"> </div>
           <div id="userfullname" class="text-center"> </div>
           <div id="useremail" class="text-center"> </div>
-          <div id="useravatar" class="text-center"> </div>
         </div>
 
         <div class="col-md-8 form-group">
@@ -53,54 +53,54 @@
 
           </div>
         </div>
-          <div class="row">
-            <div class="col-md-2 form-group text-center" id="friend7"> </div>
-            <div class="col-md-2 form-group text-center" id="friend8"> </div>
-            <div class="col-md-2 form-group text-center" id="friend9"> </div>
-            <div class="col-md-2 form-group text-center" id="friend10"> </div>
-            <div class="col-md-2 form-group text-center" id="friend11"> </div>
-            <div class="col-md-2 form-group text-center" id="friend12"> </div>
+        <div class="row">
+          <div class="col-md-2 form-group text-center" id="friend7"> </div>
+          <div class="col-md-2 form-group text-center" id="friend8"> </div>
+          <div class="col-md-2 form-group text-center" id="friend9"> </div>
+          <div class="col-md-2 form-group text-center" id="friend10"> </div>
+          <div class="col-md-2 form-group text-center" id="friend11"> </div>
+          <div class="col-md-2 form-group text-center" id="friend12"> </div>
+        </div>
+      </div>
+
+
+      <h1 class="text-center">Find More Drinking Buddies</h1>
+      <div class="row query-bar">
+        <form id="search">
+          <div class="col-md-3 col-sm-3 text-right toggles">
+            <input name="toggleCat" id="searchUser" type="radio" value="username" checked/>
+            <label for="searchUser">User Name</label>
+            <input name="toggleCat" id="searchFull" type="radio" value="fullname" />
+            <label for="searchFull">Full Name</label>
           </div>
-        </div>
-
-
-        <h1 class="text-center">Find More Drinking Buddies</h1>
-        <div class="row query-bar">
-          <form id="search">
-            <div class="col-md-3 col-sm-3 text-right toggles">
-              <input name="toggleCat" id="searchUser" type="radio" value="username" checked/>
-              <label for="searchUser">User Name</label>
-              <input name="toggleCat" id="searchFull" type="radio" value="fullname" />
-              <label for="searchFull">Full Name</label>
-            </div>
-            <!-- closes toggles col -->
-            <div class="col-md-8 col-sm-6 text-right searchtext">
-              <input id="searchBox" type="text" required placeholder="Enter a user name or friend's name" class="form-control" />
-            </div>
-            <!-- closes searchtext col -->
-            <div class="col-md-1 col-sm-3 text-left searchButton">
-              <button class="btn btn-default" type="submit">Search</button>
-            </div>
-            <!-- closes searchButton col -->
-          </form>
-        </div>
-        <!-- closes row -->
-
-        <div class="row friendsTable text-center">
-          <div class="col-md-10 col-md-offset-1">
-            <table class="table">
-              <thead>
-                <th class="text-center">User Name</th>
-                <th class="name text-center">Full Name</th>
-                <th class="text-center">Drinking Buddy?</th>
-              </thead>
-              <span id="results">Finding Drinking Buddies...</span>
-              <tbody id="tableBody">
-
-              </tbody>
-            </table>
+          <!-- closes toggles col -->
+          <div class="col-md-8 col-sm-6 text-right searchtext">
+            <input id="searchBox" type="text" required placeholder="Enter a user name or friend's name" class="form-control" />
           </div>
+          <!-- closes searchtext col -->
+          <div class="col-md-1 col-sm-3 text-left searchButton">
+            <button class="btn btn-default" type="submit">Search</button>
+          </div>
+          <!-- closes searchButton col -->
+        </form>
+      </div>
+      <!-- closes row -->
+
+      <div class="row friendsTable text-center">
+        <div class="col-md-10 col-md-offset-1">
+          <table class="table">
+            <thead>
+              <th class="text-center">User Name</th>
+              <th class="name text-center">Full Name</th>
+              <th class="text-center">Drinking Buddy?</th>
+            </thead>
+            <div id="results"></div>
+            <tbody id="tableBody">
+
+            </tbody>
+          </table>
         </div>
+      </div>
       <!-- closes query-bar container -->
     </div>
 
