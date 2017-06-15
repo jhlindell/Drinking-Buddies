@@ -6,6 +6,11 @@ var $recipes = $("#recipes");
 var recipes = [];
 var recipeCounter = 0;
 var removedCardNumbers = [];
+$('#tableBody').mouseover(addButtonListener);
+
+function addButtonListener(){
+  $('.friendButton').on('click', addFriend);
+}
 
 function getAll(event) {
   let options = {
