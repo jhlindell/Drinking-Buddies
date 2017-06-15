@@ -6,7 +6,12 @@ const router = express.Router();
 const queries = require('../queries/recipe_query');
 
 router.get('/:id?', (req, res, next) => {
-  queries.getList(req.params.id, 'number')
+  let id = req.params.id;
+  var keyword;
+  if(id){
+    keyword = 'number';
+  }
+  queries.getList(id, keyword)
   .then(result => {
     res.send(result);
   })
@@ -16,13 +21,19 @@ router.get('/:id?', (req, res, next) => {
 });
 
 router.post('/search', (req,res,next) => {
-  queries.getList(req.body.id, 'string')
+  let id = req.body.id;
+  let keyword = 'string';
+  queries.getList(id, keyword)
   .then(result => {
     res.send(result);
   })
   .catch(err => {
     next(err);
   });
+
+});
+
+router.post('/', (req,res,next) => {
 
 });
 

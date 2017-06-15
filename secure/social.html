@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fredericka+the+Great" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Drinking Buddies</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Fredericka+the+Great" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Drinking Buddies</title>
 </head>
 
 <body>
@@ -31,25 +31,27 @@
   </header>
 
   <main>
-    <div class="row">
-      <div class="col-md-4 form-group">
-      <h1 id="myProfile" class="text-center">My Profile</h1>
-        <div id="username" class="text-center"> </div>
-        <div id="userfullname" class="text-center"> </div>
-        <div id="useremail" class="text-center"> </div>
-        <div id="useravatar" class="text-center"> </div>
-      </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 form-group">
+          <h1 id="myProfile" class="text-center">My Profile</h1>
+          <div id="useravatar" class="text-center"> </div>
+          <div id="username" class="text-center"> </div>
+          <div id="userfullname" class="text-center"> </div>
+          <div id="useremail" class="text-center"> </div>
+        </div>
 
-      <div class="col-md-8 form-group">
-        <div class="row">
-        <h1 class="text-center">My Drinking Buddies</h1>
-          <div class="col-md-2 form-group text-center" id="friend1"> </div>
-          <div class="col-md-2 form-group text-center"  id="friend2"> </div>
-          <div class="col-md-2 form-group text-center" id="friend3"> </div>
-          <div class="col-md-2 form-group text-center" id="friend4"> </div>
-          <div class="col-md-2 form-group text-center" id="friend5"> </div>
-          <div class="col-md-2 form-group text-center" id="friend6"> </div>
+        <div class="col-md-8 form-group">
+          <div class="row">
+            <h1 class="text-center">My Drinking Buddies</h1>
+            <div class="col-md-2 form-group text-center" id="friend1"> </div>
+            <div class="col-md-2 form-group text-center" id="friend2"> </div>
+            <div class="col-md-2 form-group text-center" id="friend3"> </div>
+            <div class="col-md-2 form-group text-center" id="friend4"> </div>
+            <div class="col-md-2 form-group text-center" id="friend5"> </div>
+            <div class="col-md-2 form-group text-center" id="friend6"> </div>
 
+          </div>
         </div>
         <div class="row">
           <div class="col-md-2 form-group text-center" id="friend7"> </div>
@@ -58,53 +60,55 @@
           <div class="col-md-2 form-group text-center" id="friend10"> </div>
           <div class="col-md-2 form-group text-center" id="friend11"> </div>
           <div class="col-md-2 form-group text-center" id="friend12"> </div>
-
         </div>
       </div>
-    </div>
 
 
-    <h1 class="text-center">Find More Drinking Buddies</h1>
-      <div class="container query-bar">
-        <div class="row">
-          <form id="search">
-            <div class="col-md-3 col-sm-3 text-right toggles">
-              <input name="toggleCat" id="searchUser" type="radio" value="username" checked/>
-              <label for="searchUser">User Name</label>
-              <input  name="toggleCat" id="searchFull" type="radio" value="fullname"/>
-              <label for="searchFull">Full Name</label>
-            </div><!-- closes toggles col -->
-            <div class="col-md-8 col-sm-6 text-right searchtext">
-              <input id="searchBox" type="text" required placeholder="Enter a user name or friend's name" class="form-control"/>
-            </div><!-- closes searchtext col -->
-            <div class="col-md-1 col-sm-3 text-left searchButton">
-              <button class="btn btn-default" type="submit">Search</button>
-            </div> <!-- closes searchButton col -->
+      <h1 class="text-center">Find More Drinking Buddies</h1>
+      <div class="row query-bar">
+        <form id="search">
+          <div class="col-md-3 col-sm-3 text-right toggles">
+            <input name="toggleCat" id="searchUser" type="radio" value="username" checked/>
+            <label for="searchUser">User Name</label>
+            <input name="toggleCat" id="searchFull" type="radio" value="fullname" />
+            <label for="searchFull">Full Name</label>
+          </div>
+          <!-- closes toggles col -->
+          <div class="col-md-8 col-sm-6 text-right searchtext">
+            <input id="searchBox" type="text" required placeholder="Enter a user name or friend's name" class="form-control" />
+          </div>
+          <!-- closes searchtext col -->
+          <div class="col-md-1 col-sm-3 text-left searchButton">
+            <button class="btn btn-default" type="submit">Search</button>
+          </div>
+          <!-- closes searchButton col -->
         </form>
-      </div><!-- closes row -->
-    </div> <!-- closes query-bar container -->
-
-    <div class="row friendsTable text-center">
-      <div class="col-md-10 col-md-offset-1">
-        <table class="table">
-          <thead>
-            <th class="text-center">User Name</th>
-            <th class="name text-center">Full Name</th>
-            <th class="text-center">Drinking Buddy?</th>
-          </thead>
-          <span id="results">Finding Drinking Buddies...</span>
-          <tbody id="tableBody">
-
-          </tbody>
-        </table>
       </div>
+      <!-- closes row -->
+
+      <div class="row friendsTable text-center">
+        <div class="col-md-10 col-md-offset-1">
+          <table class="table">
+            <thead>
+              <th class="text-center">User Name</th>
+              <th class="name text-center">Full Name</th>
+              <th class="text-center">Drinking Buddy?</th>
+            </thead>
+            <div id="results"></div>
+            <tbody id="tableBody">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- closes query-bar container -->
     </div>
 
-    </main>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/social.js"></script>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/social.js"></script>
 </body>
 
 </html>
