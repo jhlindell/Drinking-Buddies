@@ -1,21 +1,43 @@
 $(document).ready(getAll);
 
-var $menuBox = $("#menuBox");
-var $menuBody = $("#menuBody");
+// var $menuBox = $("#menuBox");
 var $userid = 0;
 
 function populateMenu(menuDetails) {
-  console.log('menuDetails', menuDetails);
-  $('#menuName').html(menuDetails.menu_name);
+
+  let $menuBox = $('<div>');
+  $menuBox.addClass('row');
+  let $recipeBox = $('<div>');
+  $recipeBox.addClass('col-md-6 col-sm-12 recipeBox animated slideInDown');
+  $panelPrimary = $('<div>');
+  $panelPrimary.addClass('panel panel-primary');
+  $panelHeading = $('<div>');
+  $panelHeading.addClass('panel-heading');
+  $panelTitle = $('<h3>');
+  $panelTitle.addClass('panel-title');
+  $panelTitle.text(menuDetails.menu_name);
+  $panelBody = $('<div>');
+  $panelBody.addClass('panel-body');
+  $panelRow = $('<div>');
+  $panelRow.addClass('row');
+  $panelCol = $('<div>');
+  $panelCol.addClass('col-md-10 col-md-offset-1');
+  $panelTable = $('<table>');
+  $panelTable.addClass('table table-bordered text-center');
+  $panelTbody = $('<tbody>');
+
   menuDetails.recipes.forEach(function(recipe) {
+    //recipes
     let $recipeTr = $("<tr>");
     let $recipeTd = $("<td>");
     $recipeTr.append($recipeTd);
     let $recipeNameDiv = $("<div>");
     let $recipeNameH = $("<h1>");
-    $recipeNameH.html(recipe.name);
+    $recipeNameH.html(recipe[0].name);
     $recipeNameDiv.append($recipeNameH);
     $recipeTd.append($recipeNameDiv);
+    //closes recipes
+
     //ingredients
     let $table = $("<table>");
     $table.addClass("table-menuStyle");
@@ -24,9 +46,9 @@ function populateMenu(menuDetails) {
     let $tr = $("<tr>");
     let $p = $("<p>");
     let ingredientString = "";
-    for(let i = 0; i < recipe.ingredients.length; i++){
-      ingredientString += recipe.ingredients[i].ingredientName;
-      if(i < recipe.ingredients.length-1){
+    for(let i = 0; i < recipe[0].ingredients.length; i++){
+      ingredientString += recipe[0].ingredients[i].ingredientName;
+      if(i < recipe[0].ingredients.length-1){
         ingredientString += ", ";
       }
     }
@@ -34,16 +56,19 @@ function populateMenu(menuDetails) {
     $tr.append($p);
     $tbody.append($tr);
     $recipeTd.append($table);
-    //instructions
+    //closes ingredients table
 
-    //description
-    let $description = $("<div>");
-    let $descP = $("<p>");
-    $descP.text(recipe.description);
-    $description.append($descP);
-    $recipeTd.append($description);
-    $menuBody.append($recipeTr);
-    $menuBox.show();
+    $panelTbody.append($recipeTr);
+    $panelTable.append($panelTbody);
+    $panelCol.append($panelTable);
+    $panelRow.append($panelCol);
+    $panelBody.append($panelRow);
+    $panelHeading.append($panelTitle);
+    $panelPrimary.append($panelHeading);
+    $panelPrimary.append($panelBody);
+    $recipeBox.append($panelPrimary);
+    $menuBox.append($recipeBox);
+    $('#myMenus').append($menuBox);
   });
 }
 
