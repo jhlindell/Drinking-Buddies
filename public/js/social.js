@@ -9,6 +9,13 @@ const $useravatar = $('#useravatar');
 let $userid = 0;
 $('#search').on('submit',search);
 $('#tableBody').mouseover(addButtonListener);
+$('#logout').on('click', logout);
+
+function logout(){
+  document.clearCookie;
+  window.location.href = "index.html";
+  console.log('working')
+}
 
 function addButtonListener(){
   $('.friendButton').on('click', addFriend);
