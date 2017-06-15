@@ -51,6 +51,7 @@ function register(event){
   if(dd<10) {dd='0'+dd;}
   if(mm<10) {mm='0'+mm;}
   today21st = yyyy+'-'+mm+'-'+dd;
+  const avatar = $('#avatar').val();
   console.log('today21st', today21st);
   console.log('birthday', birthday);
 
@@ -59,9 +60,17 @@ function register(event){
   } else if(birthday > today21st){
     return window.alert('You must be of legal drinking age to use Drinking Buddies');
   }
+  let payload = {
+    username: username,
+    full_name: full_name,
+    email: email,
+    password: password,
+    birthday: birthday,
+    avatar: avatar
+  }
   const options = {
     contentType: 'application/json',
-    data: JSON.stringify({username, full_name, email, password, birthday}),
+    data: JSON.stringify(payload),
     method: 'POST',
     url: '/api/users/register'
   };
