@@ -16,6 +16,9 @@ exports.seed = function(knex, Promise) {
     {id: 5,
     menu_name: 'My Cocktails',
     user_id: 4},
+    {id: 6,
+    menu_name: 'My Cocktails',
+    user_id: 1},
   ];
 
     return knex('menus').del()

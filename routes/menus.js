@@ -16,6 +16,8 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
+
+
 //get menu by user id
 router.get('/user/:id', (req, res, next) => {
   queries.getUserMenuList(req.params.id)
