@@ -5,12 +5,12 @@ var $userid = 0;
 
 function populateMenu(menuDetails) {
 
-  let $menuBox = $('<div>');
-  $menuBox.addClass('row');
+  // let $menuBox = $('<div>');
+  // $menuBox.addClass('row');
   let $recipeBox = $('<div>');
   $recipeBox.addClass('col-md-6 col-sm-12 recipeBox animated slideInDown');
   $panelPrimary = $('<div>');
-  $panelPrimary.addClass('panel panel-primary');
+  $panelPrimary.addClass('panel panel-default');
   $panelHeading = $('<div>');
   $panelHeading.addClass('panel-heading');
   $panelTitle = $('<h3>');
@@ -67,8 +67,7 @@ function populateMenu(menuDetails) {
     $panelPrimary.append($panelHeading);
     $panelPrimary.append($panelBody);
     $recipeBox.append($panelPrimary);
-    $menuBox.append($recipeBox);
-    $('#myMenus').append($menuBox);
+    $('#myMenus').append($recipeBox);
   });
 }
 
