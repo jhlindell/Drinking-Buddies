@@ -26,7 +26,6 @@ function get(id) {
         .then(function(data) {
           event[0].guestList = data[0];
           event[0].menu = data[1];
-          console.log(event[0]);
           return event[0];
         });
     });
