@@ -26,13 +26,11 @@ function login(event) {
   $.ajax(options)
   .done(()=>{
     console.log('successful login');
-    window.location.href = '/home.html';
+    window.location.href = '/social.html';
   })
   .fail((err)=>{
     window.alert("Login failed");
     window.location.href = '/index.html';
-    // console.log('error', err);
-    // console.log('Could not verify user');
   });
 }
 
