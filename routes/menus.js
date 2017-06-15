@@ -9,7 +9,6 @@ const queries = require('../queries/menu_query');
 router.get('/:id', (req, res, next) => {
   queries.getSingle(req.params.id)
   .then(result => {
-    console.log(result);
     res.send(result);
   })
   .catch(err => {
@@ -19,7 +18,13 @@ router.get('/:id', (req, res, next) => {
 
 //get menu by user id
 router.get('/user/:id', (req, res, next) => {
-
+  queries.getUserMenuList(req.params.id)
+  .then(result => {
+    res.send(result);
+  })
+  .catch(err => {
+    next(err);
+  });
 });
 
 module.exports = router;

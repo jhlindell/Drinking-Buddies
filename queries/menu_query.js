@@ -28,8 +28,7 @@ function getSingle(id) {
     .then(function(menu) {
       console.log(menu);
       menu[0].recipes = [];
-      return Promise.all(menu.map(item =>
-        getMenuItems(item.id)
+      return getMenuItems(menu[0].id)
         .then(function(menu_items) {
           //console.log(menu_items);
           return Promise.all(menu_items.map(function(recipe_id) {
@@ -43,7 +42,6 @@ function getSingle(id) {
               });
           }));
         })
-      ))
       .then(function(result) {
         //console.log(menu);
          return menu[0];
@@ -51,27 +49,13 @@ function getSingle(id) {
     });
 }
 
-// function getUserMenuList(userid){
-//   return knex('menus')
-//     .where()
-// }
-
-// function getSingle(id) {
-//   return getMenu(id)
-//     .then(item =>
-//       Promise.resolve(getMenuItems(item.id)
-//         .then(menu_item =>
-//           Promise.all(menu_item.map(recipe =>
-//            recipeQuery.getList(recipe, 'number')
-//           .then(recipes => {
-//             item.recipes = recipes;
-//             return item;
-//           })
-//       ))))
-//       .then(result => id ? result[0] : result)
-//     );
-// }
+function getUserMenuList(userid){
+  return knex('menus')
+    .select('menus.id', 'menus.menu_name')
+    .where('menus.user_id', userid);
+}
 
 module.exports = {
-  getSingle
+  getSingle,
+  getUserMenuList
 };

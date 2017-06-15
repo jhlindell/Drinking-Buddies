@@ -18,7 +18,13 @@ exports.seed = function(knex, Promise) {
     recipe_id: 1},
     {id: 6,
     menu_id: 4,
-    recipe_id: 3}
+    recipe_id: 3},
+    {id: 7,
+    menu_id: 5,
+    recipe_id: 1},
+    {id: 8,
+    menu_id: 5,
+    recipe_id: 2},
   ];
 
     return knex('menu_items').del()
