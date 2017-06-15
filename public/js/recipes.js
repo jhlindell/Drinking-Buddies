@@ -16,9 +16,7 @@ function getAll(event) {
 
   $.ajax(options)
     .done((data) => {
-      // $results.html(JSON.stringify(data));
       recipes = data;
-      $('#results').val('');
       initializePage(recipes);
     })
     .fail((err) => {
@@ -28,6 +26,7 @@ function getAll(event) {
 
 function search(event) {
   event.preventDefault();
+  clearRecipes();
   $results.html('Gathering search results...');
   let $value = $('#searchBox').val();
   let payload = {
@@ -44,9 +43,9 @@ function search(event) {
       if (data.length === 0) {
         $results.html('Your search did not return anything.');
       } else {
-        // $results.html(JSON.stringify(data));
+        $results.html('');
         recipes = data;
-        console.log(recipes);
+        initializePage(recipes);
       }
     })
     .fail((err) => {
@@ -85,13 +84,10 @@ function addRecipeCard(event) {
     $clone.find(".panel-title").html("Recipe " + recipeCounter);
   }
   $clone.appendTo($recipes);
-  document.getElementById('pageBottom').scrollIntoView();
 }
 
 function populateCard(num) {
-  console.log(num);
   let $selectedCard = $recipes.find("[data-recipe='" + num + "']");
-  console.log($selectedCard);
   let recipeNumber = $selectedCard[0].dataset.recipe;
   let recipe = recipes[recipeNumber - 1];
   let $recipeBody = $selectedCard.find(".recipeBody");
@@ -139,7 +135,7 @@ function populateCard(num) {
   //description
   let $description = $("<div>");
   let $descH = $("<h4>");
-  $descH.html("Description");
+  $descH.html("Description:");
   let $descP = $("<p>");
   $descP.text(recipe.description);
   $description.append($descH);
@@ -179,4 +175,10 @@ function populateRecipeBox() {
     $clone.toggle();
     $clone.appendTo($ingredients);
   }
+}
+
+function clearRecipes() {
+  $("#recipes .recipeCards").remove();
+  recipeCounter = 0;
+  recipeObjectArray = [];
 }
