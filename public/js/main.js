@@ -33,6 +33,8 @@ if (currentParty.hasOwnProperty('recipes')) {
   initializePage();
 }
 
+populateIngBox();
+
 //adds another recipe card to the #recipes row
 function addRecipeCard(event) {
 
@@ -329,4 +331,10 @@ function clearRecipes() {
   $("#recipes .recipeCards").remove();
   recipeCounter = 0;
   recipeObjectArray = [];
+}
+
+function populateIngBox() {
+  for(let i = 0; i < stockItemArray.length; i++) {
+    $('.ingName').append('<option value="' + stockItemArray[i].si_id + '">' + stockItemArray[i].name + '</option>');
+  }
 }
