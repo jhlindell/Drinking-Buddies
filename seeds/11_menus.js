@@ -20,11 +20,14 @@ exports.seed = function(knex, Promise) {
     menu_name: 'My Cocktails',
     user_id: 1},
     {id: 7,
-    menu_name: 'Tiki Menu',
-    user_id: 4},
-    {id: 7,
     menu_name: 'Laissez les bons temps rouler',
-    user_id: 1}
+    user_id: 1},
+    {id: 8,
+    menu_name: 'Quiet Get-together',
+    user_id: 4},
+    // {id: ,
+    //   menu_name: '',
+    //   user_id: },
   ];
 
     return knex('menus').del()
