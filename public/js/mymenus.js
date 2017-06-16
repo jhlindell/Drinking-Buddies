@@ -85,16 +85,23 @@ function getAll(event) {
 
       $.ajax(getMenuNameOptions)
         .done((usersMenus) => {
+          let promiseArray =[];
           for (let i=0; i<usersMenus.length; i++){
-            parseMenu(usersMenus[i]);
+            promiseArray.push(parseMenu(usersMenus[i]));
           }
+          Promise.all(promiseArray).then((results) => {
+            for(let i = 0; i< results.length; i++){
+            populateMenu(results[i]);
+          }
+          });
+
         })
         .fail((err) => {
-          console.err(err);
+          console.error(err);
         });
     })
     .fail((err) => {
-      console.err(err);
+      console.error(err);
     });
 }
 
@@ -105,19 +112,18 @@ function parseMenu(userMenu) {
     url: `/api/menus/${userMenu.id}`,
   };
 
-  $.ajax(parseMenuOptions)
+  return $.ajax(parseMenuOptions)
     .done((menuDetails)=>{
-    populateMenu(menuDetails);
+      return menuDetails;
   })
   .fail((err)=>{
-    console.err(err);
+    console.error(err);
   });
 }
 
 function createMenu(event){
   event.preventDefault();
   let $menuName = $('#createBox').val();
-  console.log($menuName);
   let payload = {
     menu_name: $menuName,
   };
@@ -134,6 +140,6 @@ function createMenu(event){
       window.location.href = '/recipes.html';
   })
   .fail((err)=>{
-    console.err(err);
+    console.error(err);
   });
 }

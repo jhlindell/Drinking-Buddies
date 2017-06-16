@@ -272,7 +272,7 @@ table > tbody > tr > td {
 .table-styling {
   display: inline-block;
   float: none;
-  height: 200px;
+  height: 100px;
   overflow-y: scroll;
 }
 
