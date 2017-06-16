@@ -90,11 +90,11 @@ function getAll(event) {
           }
         })
         .fail((err) => {
-          console.err(err);
+          console.error(err);
         });
     })
     .fail((err) => {
-      console.err(err);
+      console.error(err);
     });
 }
 
@@ -110,14 +110,13 @@ function parseMenu(userMenu) {
     populateMenu(menuDetails);
   })
   .fail((err)=>{
-    console.err(err);
+    console.error(err);
   });
 }
 
 function createMenu(event){
   event.preventDefault();
   let $menuName = $('#createBox').val();
-  console.log($menuName);
   let payload = {
     menu_name: $menuName,
   };
@@ -134,6 +133,6 @@ function createMenu(event){
       window.location.href = '/recipes.html';
   })
   .fail((err)=>{
-    console.err(err);
+    console.error(err);
   });
 }
