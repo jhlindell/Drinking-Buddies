@@ -30,7 +30,7 @@ h1,h2,h3, nav{
   background-color: #B99C6B;
 }
 
-#logout:active{
+#logout:hover{
   background-color: chartreuse;
 }
 
