@@ -30,7 +30,7 @@ exports.seed = function(knex, Promise) {
     },
 
     {id:4,
-      name: "Daquiri",
+      name: "Jon\'s Broken 'Dakkiri'",
       description: "The ultimate showcase for rum.",
       instructions: "Shake with ice and serve up in a coupe glass.",
       template: false,

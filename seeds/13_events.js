@@ -15,6 +15,20 @@ exports.seed = function(knex, Promise) {
       host_id: 4,
       menu_id: 4
     },
+    { id:3,
+      name: "Laissez les bons temps rouler!",
+      date: '06/18/2017',
+      guestCount: 4,
+      host_id: 1,
+      menu_id: 7
+    },
+    // { id:,
+    //   name: "",
+    //   date: '',
+    //   guestCount: ,
+    //   host_id: ,
+    //   menu_id: 
+    // },
   ];
 
     // Deletes ALL existing entries

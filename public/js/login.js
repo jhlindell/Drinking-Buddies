@@ -64,7 +64,7 @@ function register(event){
     password: password,
     birthday: birthday,
     avatar: avatar
-  }
+  };
   const options = {
     contentType: 'application/json',
     data: JSON.stringify(payload),
