@@ -132,6 +132,7 @@ table > tbody > tr > td {
 }
 
 .recipeCards {
+  height: 400px;
   display:inline-block;
   float: none;
   -vendor-animation-duration: 3s;
@@ -272,7 +273,7 @@ table > tbody > tr > td {
 .table-styling {
   display: inline-block;
   float: none;
-  height: 200px;
+  height: 100px;
   overflow-y: scroll;
 }
 
