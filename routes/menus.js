@@ -16,8 +16,6 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
-
-
 //get menu by user id
 router.get('/user/:id', (req, res, next) => {
   queries.getUserMenuList(req.params.id)
@@ -26,6 +24,20 @@ router.get('/user/:id', (req, res, next) => {
   })
   .catch(err => {
     next(err);
+  });
+});
+
+//create a menu
+router.post('/create', (req, res, next) => {
+  let body = req.body;
+  knex.insert({
+    menu_name: body.menu_name,
+    user_id: req.user.id
+  })
+  .into('menus')
+  .returning('*')
+  .then((response)=>{
+    res.send(response[0].menu_name);
   });
 });
 
