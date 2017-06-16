@@ -39,6 +39,8 @@ exports.seed = function(knex, Promise) {
     recipe_id: 12},
     {menu_id:7,
     recipe_id: 15},
+    {menu_id:8,
+    recipe_id: 3},
     // {menu_id:,
     // recipe_id: },
   ];

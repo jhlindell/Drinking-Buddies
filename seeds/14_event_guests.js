@@ -33,6 +33,10 @@ exports.seed = function(knex, Promise) {
       event_id: 3,
       guest_id: 4
     },
+    { id:9,
+      event_id: 4,
+      guest_id: 5
+    },
     // { id:,
     //   event_id: ,
     //   guest_id:

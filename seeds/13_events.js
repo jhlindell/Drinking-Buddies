@@ -22,12 +22,19 @@ exports.seed = function(knex, Promise) {
       host_id: 1,
       menu_id: 7
     },
+    { id:4,
+      name: "Quiet Get-together",
+      date: '06/17/17',
+      guestCount: 2,
+      host_id: 4,
+      menu_id: 8
+    },
     // { id:,
     //   name: "",
     //   date: '',
     //   guestCount: ,
     //   host_id: ,
-    //   menu_id: 
+    //   menu_id:
     // },
   ];
 
