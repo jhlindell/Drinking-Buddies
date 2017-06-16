@@ -46,9 +46,7 @@ function populateGuide() {
     $instructions.append($instH);
     $instructions.append($instP);
     $recipeTd.append($instructions);
-    //let $hr = $("<hr>");
     $tableBody.append($recipeTr);
-    //$tableBody.append($hr);
     counterIndex++;
     if(counterIndex === numRecipes){
       clearInterval(tableBuilder);

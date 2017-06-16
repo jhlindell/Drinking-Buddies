@@ -20,7 +20,23 @@ exports.seed = function(knex, Promise) {
     { id:5,
       event_id: 1,
       guest_id: 5
-    }
+    },
+    { id:6,
+      event_id: 3,
+      guest_id: 2
+    },
+    { id:7,
+      event_id: 3,
+      guest_id: 3
+    },
+    { id:8,
+      event_id: 3,
+      guest_id: 4
+    },
+    // { id:,
+    //   event_id: ,
+    //   guest_id:
+    // },
   ];
 
     // Deletes ALL existing entries

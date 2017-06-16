@@ -1,6 +1,12 @@
 
 # Q2-Project: The Misterfits present: Drinking Buddies!!
 
+#Deployed Full-Stack application link (Heroku)
+<https://drinking-buddies.herokuapp.com>
+
+#Screenshots and Walkthrough
+
+
 #What is this application?
 Drinking Buddies database (DBdb) is a full-stack web application layering a social-sharing component over a party-planning tool with access to a cocktail recipe database.
 
@@ -16,7 +22,7 @@ HTML5, Bootstrap CSS, ES6 & jQuery, Node & Express, PostgreSQL & Knex
 3. a reasonably intelligible website to display the database
 4. must-be-mobile
 
-##Project Management tool (Trello)
+#Project Management tool (Trello)
 <https://trello.com/b/w2uDPrnh/the-misterfits-present-drinking-buddies>
 
 #Stretch goals
