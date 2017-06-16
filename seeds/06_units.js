@@ -7,7 +7,8 @@ let data = [
   {id:4, name:"dash"},
   {id:5, name:"drops"},
   {id:6, name:"each"},
-  {id:7, name:"barspoon"}
+  {id:7, name:"barspoon"},
+  {id:8, name:"wedge or slice"}
 ];
 
   // Deletes ALL existing entries
