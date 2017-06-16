@@ -1,11 +1,43 @@
 $(document).ready(getAll);
 const $results = $('#results');
+var $userid;
 $('#search').on('submit', search);
 $('#create').on('click', createRecipeBox);
 var $recipes = $("#recipes");
 var recipes = [];
 var recipeCounter = 0;
 var removedCardNumbers = [];
+
+function getUserMenus(event) {
+  let getIdOptions = {
+    contentType: 'application/json',
+    method: 'GET',
+    url: '/api/users/'
+  };
+  $.ajax(getIdOptions)
+    .done((data) =>{
+      $userid = data.id;
+      let getMenuNameOptions = {
+        contentType: 'application/json',
+        method: 'GET',
+        url: `/api/menus/user/${$userid}`,
+      };
+
+      $.ajax(getMenuNameOptions)
+        .done((usersMenus) => {
+          for(let i in usersMenus){
+            $('.selectmenu').append(`<option value="${usersMenus[i].id}">${usersMenus[i].menu_name}</option>`);
+          }
+        })
+        .fail((err) => {
+          console.err(err);
+        });
+    })
+    .fail((err) => {
+      console.err(err);
+    });
+}
+
 
 function getAll(event) {
   let options = {
@@ -18,6 +50,8 @@ function getAll(event) {
     .done((data) => {
       recipes = data;
       initializePage(recipes);
+      getUserMenus();
+      $('.addButton').on('click', addToMenu);
     })
     .fail((err) => {
       console.log(err);
@@ -46,6 +80,8 @@ function search(event) {
         $results.html('');
         recipes = data;
         initializePage(recipes);
+        getUserMenus();
+        $('.addButton').on('click', addToMenu);
       }
     })
     .fail((err) => {
@@ -57,6 +93,29 @@ function search(event) {
 
 function createRecipeBox(event) {
   $('#recipeBox').toggle();
+}
+
+function addToMenu(event){
+  let recipe_id = event.target.value;
+  let $selectedCard = $recipes.find("[data-recipe='" + recipe_id + "']");
+  let menuChoice = $selectedCard.find('.selectmenu').val();
+  let payload = {
+    menuId: menuChoice,
+    recipeId: event.target.value
+  };
+  let options = {
+    contentType: 'application/json',
+    data: JSON.stringify(payload),
+    method: 'POST',
+    url: '/api/menus/add'
+  };
+  $.ajax(options)
+    .done(data => {
+      window.alert(data);
+    })
+    .fail((err) => {
+      console.log(err);
+    });
 }
 
 function initializePage(recipes) {
@@ -141,6 +200,8 @@ function populateCard(num) {
   $description.append($descH);
   $description.append($descP);
   $recipeBody.append($description);
+  $selectedCard.find(".addButton").val(recipe.id);
+
 }
 
 //populates recipebox with object info
@@ -178,6 +239,7 @@ function populateRecipeBox() {
 }
 
 function clearRecipes() {
+  $(".selectmenu").empty();
   $("#recipes .recipeCards").remove();
   recipeCounter = 0;
   recipeObjectArray = [];

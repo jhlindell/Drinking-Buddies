@@ -43,6 +43,24 @@
   <main>
     <div class="container">
       <h1 id="title" class="text-center">My Menus</h1>
+
+      <div class="row query-bar text-center">
+        <form id="create">
+          <div class="col-md-3 text-right">
+            <label for="searchBox">Create a New Menu</label>
+          </div>
+          <div class="col-md-7 col-sm-5 text-right searchtext">
+            <input id="createBox" type="text" required placeholder="What would you like to name this menu?" class="form-control" />
+          </div>
+          <!-- closes searchtext col -->
+          <div class="col-md-2 col-sm-3 text-left searchButton">
+            <button class="btn btn-default center" type="submit" id="createButton">Create</button>
+          </div>
+          <!-- closes searchButton col -->
+        </form>
+      </div>
+      <!-- closes row -->
+      <p></p>
       <div class="row" id="myMenus"> </div>
     </div>
 
