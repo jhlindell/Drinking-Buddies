@@ -103,7 +103,7 @@ exports.seed = function(knex, Promise) {
       variant_of: null
     },
     {id:12,
-      name: "Hemingway Daiquiri or 'Papa Doble'",
+      name: "Hemingway Daiquiri",
       description: 'In his 2001 book Straight Up or On the Rocks, William Grimes claims that Ernest Hemingway "often worked his way through about a dozen of these lime slurpees, sometimes ordering doubles, which became known as Papa Dobles."',
       instructions: "Fill a cocktail shaker with ice. Add all of the remaining ingredients except the lime and shake well. Strain into a chilled coupe and garnish with the lime wheel.",
       template: false,

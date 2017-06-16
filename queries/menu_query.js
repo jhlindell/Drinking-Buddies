@@ -46,7 +46,8 @@ function getSingle(id) {
 function getUserMenuList(userid){
   return knex('menus')
     .select('menus.id', 'menus.menu_name')
-    .where('menus.user_id', userid);
+    .where('menus.user_id', userid)
+    .orderBy('menus.menu_name','asc');
 }
 
 module.exports = {
