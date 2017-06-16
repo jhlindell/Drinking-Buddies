@@ -22,8 +22,6 @@
         <div>
           <ul class="nav nav-pills nav-justified">
             <li role="presentation" class="main-nav active"><a href="planevent.html">Plan a Party</a></li>
-
-
             <li role="presentation" class="main-nav"><a href="mymenus.html">My Cocktails</a></li>
             <li role="presentation" class="main-nav"><a href="social.html">Social</a></li>
           </ul>
@@ -44,15 +42,19 @@
 
   <main>
     <div class="container">
+      <div id="partyPicker" class="row">
+        <div class="col-md-8 col-sm-12 partyPicker">
+          <select class="selectpicker form-control userParties"></select>
+        </div>
+        <div class="col-md-2 col-sm-12 partyPicker">
+          <button class="btn btn-default partyButton">Load Party</button>
+        </div>
+      </div>
       <div id="partyInfo" class="row">
-        <div class="col-md-2 col-sm-12">
+        <!-- <div class="col-md-2 col-sm-12">
           <button class="btn btn-default loadButton">Load</button>
           <button class="btn btn-default saveButton">Save</button>
           <button class="btn btn-default clearButton">Clear</button>
-        </div>
-        <!-- <div class="col-md-1">
-        </div>
-        <div class="col-md-1">
         </div> -->
         <div class="input-group col-md-3 col-sm-12 partyInfo">
           <span class="input-group-addon">Party Name</span>

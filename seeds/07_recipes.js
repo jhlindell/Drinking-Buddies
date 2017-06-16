@@ -28,6 +28,17 @@ exports.seed = function(knex, Promise) {
       posted_by: 1,
       variant_of: null
     },
+
+    {id:4,
+      name: "Daquiri",
+      description: "The ultimate showcase for rum.",
+      instructions: "Shake with ice and serve up in a coupe glass.",
+      template: false,
+      attributed_to: "",
+      posted_by: 4,
+      variant_of: null
+    },
+
     {id:5,
       name: "Zombie",
       description: "Legend has it that Donn Beach originally concocted the Zombie to help a hung-over customer get through a business meeting. The customer returned several days later to complain that he had been turned into a zombie for his entire trip. Its smooth, fruity taste works to conceal its extremely high alcoholic content. Don the Beachcomber restaurants limit their customers to two Zombies apiece.",
@@ -136,6 +147,7 @@ exports.seed = function(knex, Promise) {
     //   posted_by: ,
     //   variant_of: null
     // },
+
   ];
 
     // Deletes ALL existing entries

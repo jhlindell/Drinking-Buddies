@@ -4,11 +4,12 @@ $("#recipeBox").on("click", updateRecipe);
 $(".loadButton").on("click", callFirebase);
 $(".saveButton").on("click", saveRecipes);
 $(".clearButton").on("click", clearSession);
+$(".partyButton").on("click", loadEvent);
 var $recipes = $("#recipes");
 $recipes.on("click", recipeCardClick);
 var $ingredients = $("#ingredients");
 var $recipeBox = $(".recipeBox");
-var recipeCounter = 1;
+var recipeCounter = 0;
 var recipeObjectArray = [];
 var removedCardNumbers = [];
 var partyNames = [];
@@ -17,6 +18,8 @@ getPartyNames();
 var currentParty = {
   recipes: []
 };
+
+getUserEvents();
 
 //loads session from local storage
 clearRecipes();
@@ -131,8 +134,11 @@ function buildRecipeObject() {
     if (!$(this).hasClass("ingClone")) {
       let ingredientObj = {};
       ingredientObj.measure = $(this).find(".measure").val();
-      ingredientObj.ingredientName = $(this).find(".ingName").val();
       ingredientObj.unit = $(this).find(".unit").val();
+      let slice = ingredientObj.unit.length;
+      let string = $(this).find("option:selected").text().substring(slice);
+      ingredientObj.ingredientName = string;
+      ingredientObj.ingredientNum = Number($(this).find(".ingName").val());
       recipeObj.ingredients.push(ingredientObj);
     }
   });
@@ -206,7 +212,7 @@ function initializePage() {
   let numRecipies = currentParty.recipes.length;
   for (let i = 0; i < numRecipies; i++) {
     addRecipeCard();
-    populateCard(i + 1);
+    populateCard(i+1);
   }
   $("#partyName").val(currentParty.name);
   $("#partyDate").val(currentParty.date);
@@ -337,4 +343,63 @@ function populateIngBox() {
   for(let i = 0; i < stockItemArray.length; i++) {
     $('.ingName').append('<option value="' + stockItemArray[i].si_id + '">' + stockItemArray[i].name + '</option>');
   }
+}
+
+function getUserEvents() {
+  let getIdOptions = {
+    contentType: 'application/json',
+    method: 'GET',
+    url: '/api/users/'
+  };
+  $.ajax(getIdOptions)
+    .done((data) =>{
+      $userid = data.id;
+      let getEventOptions = {
+        contentType: 'application/json',
+        method: 'GET',
+        url: `/api/events/user/${$userid}`,
+      };
+
+      $.ajax(getEventOptions)
+        .done((usersEvents) => {
+          populateUserEvents(usersEvents);
+        })
+        .fail((err) => {
+          console.err(err);
+        });
+    })
+    .fail((err) => {
+      console.err(err);
+    });
+}
+
+function populateUserEvents(parties){
+  for(let i = 0; i < parties.length; i++) {
+    $('.userParties').append('<option value="' + parties[i].id + '">' +
+    parties[i].name + '</option>');
+  }
+}
+
+function loadEvent(event){
+  var partyId = $("#partyPicker").find(".userParties").val();
+  let getEventOptions = {
+    contentType: 'application/json',
+    method: 'GET',
+    url: `/api/events/${partyId}`
+  };
+  $.ajax(getEventOptions)
+    .done((data) =>{
+      clearSession();
+      let array = [];
+      for(i = 0; i < data.menu.recipes.length; i++){
+        array.push(data.menu.recipes[i][0]);
+      }
+      currentParty.name = data.name;
+      currentParty.date = data.date.split("T")[0];
+      currentParty.guestCount = data.guestCount;
+      currentParty.recipes = array;
+      recipeObjectArray = currentParty.recipes;
+      initializePage();
+      persistRecipes();
+    });
 }
