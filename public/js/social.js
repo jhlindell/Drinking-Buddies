@@ -8,19 +8,12 @@ const $useremail = $('#useremail');
 const $useravatar = $('#useravatar');
 let $userid = 0;
 $('#search').on('submit',search);
-$('#tableBody').mouseover(addButtonListener);
 $('#logout').on('click', logout);
 
 function logout(){
   document.clearCookie;
   window.location.href = "index.html";
-  console.log('working')
 }
-
-function addButtonListener(){
-  $('.friendButton').on('click', addFriend);
-}
-
 
 function getUserInfo(){
   let options = {
@@ -34,10 +27,7 @@ function getUserInfo(){
       $username.html('Username: ' + data.username);
       $userfullname.html('Full Name: ' + data.full_name);
       $useremail.html('Email: ' + data.email);
-
       $userid = data.id;
-
-
     })
     .fail((err) => {
       console.log(err);
@@ -84,6 +74,7 @@ function search(event){
       } else {
         $results.html("");
         dataToTable(data);
+        $('.friendButton').on('click', addFriend);
 
       }
     })

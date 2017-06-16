@@ -29,4 +29,20 @@ router.get('/user/:id', (req, res, next) => {
   });
 });
 
+router.post('/', (req, res, next) => {
+  let body = req.body;
+  knex.insert({
+    menu_id: body.menuId,
+    recipe_id: body.recipeId
+  })
+  .into('menu_items')
+  .returning('*')
+  .then((response)=>{
+    res.send('Recipe added to menu!');
+  })
+  .catch((response)=>{
+    res.send('This recipe is already in that menu.');
+  });
+});
+
 module.exports = router;
