@@ -55,7 +55,7 @@ function getList(id, keyword) {
         })
       ))
       .then(result =>{
-        return result[0];
+        return result;
       })
     );
 }

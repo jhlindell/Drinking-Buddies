@@ -390,10 +390,14 @@ function loadEvent(event){
   $.ajax(getEventOptions)
     .done((data) =>{
       clearSession();
+      let array = [];
+      for(i = 0; i < data.menu.recipes.length; i++){
+        array.push(data.menu.recipes[i][0]);
+      }
       currentParty.name = data.name;
       currentParty.date = data.date.split("T")[0];
       currentParty.guestCount = data.guestCount;
-      currentParty.recipes = data.menu.recipes;
+      currentParty.recipes = array;
       recipeObjectArray = currentParty.recipes;
       initializePage();
       persistRecipes();
