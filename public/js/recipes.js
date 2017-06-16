@@ -107,7 +107,7 @@ function addToMenu(event){
     contentType: 'application/json',
     data: JSON.stringify(payload),
     method: 'POST',
-    url: '/api/menus'
+    url: '/api/menus/add'
   };
   $.ajax(options)
     .done(data => {
