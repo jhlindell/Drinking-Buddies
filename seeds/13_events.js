@@ -7,7 +7,14 @@ exports.seed = function(knex, Promise) {
       guestCount: 5,
       host_id: 4,
       menu_id: 4
-    }
+    },
+    { id:2,
+      name: "Tiki Party!",
+      date: '06/22/2017',
+      guestCount: 7,
+      host_id: 4,
+      menu_id: 4
+    },
   ];
 
     // Deletes ALL existing entries

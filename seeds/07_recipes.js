@@ -27,6 +27,15 @@ exports.seed = function(knex, Promise) {
       attributed_to: "",
       posted_by: 1,
       variant_of: null
+    },
+    {id:4,
+      name: "Daquiri",
+      description: "The ultimate showcase for rum.",
+      instructions: "Shake with ice and serve up in a coupe glass.",
+      template: false,
+      attributed_to: "",
+      posted_by: 4,
+      variant_of: null
     }
   ];
 

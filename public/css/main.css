@@ -319,3 +319,13 @@ td {
     background-color: transparent;
     -webkit-border-radius: 6px;
 }
+
+#partyPicker {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.partyPicker {
+  display: inline-table;
+  float: none;
+}

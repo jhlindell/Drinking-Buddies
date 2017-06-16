@@ -1,5 +1,4 @@
 const knex = require('../knex');
-const recipeQuery = require('./recipe_query');
 const menuQuery = require('./menu_query');
 
 function getEvent(id) {
@@ -31,6 +30,13 @@ function get(id) {
     });
 }
 
+function getUserEventList(userid){
+  return knex('events')
+    .select('events.id', 'events.name')
+    .where('events.host_id', userid);
+}
+
 module.exports = {
-  get
+  get,
+  getUserEventList
 };
