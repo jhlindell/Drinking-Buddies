@@ -20,7 +20,6 @@ router.get('/:id', (req, res, next) => {
 router.get('/user/:id', (req, res, next) => {
   queries.getUserEventList(req.params.id)
   .then(result => {
-    console.log(result);
     res.send(result);
   })
   .catch(err => {

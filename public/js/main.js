@@ -9,7 +9,7 @@ var $recipes = $("#recipes");
 $recipes.on("click", recipeCardClick);
 var $ingredients = $("#ingredients");
 var $recipeBox = $(".recipeBox");
-var recipeCounter = 1;
+var recipeCounter = 0;
 var recipeObjectArray = [];
 var removedCardNumbers = [];
 var partyNames = [];
@@ -212,7 +212,7 @@ function initializePage() {
   let numRecipies = currentParty.recipes.length;
   for (let i = 0; i < numRecipies; i++) {
     addRecipeCard();
-    populateCard(i + 1);
+    populateCard(i+1);
   }
   $("#partyName").val(currentParty.name);
   $("#partyDate").val(currentParty.date);
@@ -389,6 +389,13 @@ function loadEvent(event){
   };
   $.ajax(getEventOptions)
     .done((data) =>{
-            
+      clearSession();
+      currentParty.name = data.name;
+      currentParty.date = data.date.split("T")[0];
+      currentParty.guestCount = data.guestCount;
+      currentParty.recipes = data.menu.recipes;
+      recipeObjectArray = currentParty.recipes;
+      initializePage();
+      persistRecipes();
     });
 }
