@@ -379,8 +379,8 @@ exports.seed = function(knex, Promise) {
     },
     {
       id:51,
-      unit:2.5,
-      measure:1,
+      unit:1,
+      measure:2.5,
       stock_item_id:14,
       recipe_id:13,
       order:1
