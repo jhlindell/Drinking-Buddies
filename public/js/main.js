@@ -187,6 +187,7 @@ function populateCard(num) {
   let $instH = $("<h4>");
   $instH.html("Instructions: ");
   let $instP = $("<p>");
+  $instP.addClass("table-styling");
   $instP.text(recipe.instructions);
   $instructions.append($instH);
   $instructions.append($instP);
@@ -196,6 +197,7 @@ function populateCard(num) {
   let $descH = $("<h4>");
   $descH.html("Description");
   let $descP = $("<p>");
+  $descP.addClass("table-styling");
   $descP.text(recipe.description);
   $description.append($descH);
   $description.append($descP);
