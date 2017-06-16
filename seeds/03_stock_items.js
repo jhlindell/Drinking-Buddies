@@ -171,11 +171,61 @@ exports.seed = function(knex, Promise) {
     name: 'Luxardo Cocktail Cherry',
     description: 'Deeply red and deeply flavored, these cocktail cherries are a treat in and of themselves.',
     category: 9},
+
+    {si_id: 35,
+    name: 'Passion Fruit Syrup',
+    description: 'Passion Fruit is native to South America but grown widely in lush climates around the world, resulting in its use in tiki-style and other tropical drinks. It is called for in a Zombie for a true tiki experience!',
+    category: 13},
+
+    {si_id: 36,
+    name: 'Demerara Sugar',
+    description: 'Demerara is a light brown, partially refined, sugar produced from the first crystallization during processing cane juice into sugar crystals - this process is similar to what happens with naturally evaporated cane juice. Demerara has a natural caramel-like flavor; this lends warm, caramel notes to whatever you add the sugar to.',
+    category: 16},
+
+    {si_id: 37,
+    name: 'Kubler Absinthe',
+    description: 'Switzerland, In keeping with the local tradition of clandestine La Bleue, it is crystal clear, has no added sugar. It is very aromatic and has a deep white louche. This absinthe is already the best-seller in Switzerland.',
+    category: 7},
+
+    {si_id: 38,
+    name: 'Grapefruit Juice',
+    description: 'Grapefruit juice is the juice from grapefruits. It is rich in Vitamin C and ranges from sweet-tart to very sour. Variations include white grapefruit, pink grapefruit and ruby red grapefruit juice.',
+    category: 9},
+
+    {si_id: 39,
+    name: 'Cinnamon Syrup',
+    description: 'Add a splash of sweet heat to cocktails like the Zombie with this simple cinnamon syrup.',
+    category: 13},
+
+    {si_id: 40,
+    name: 'Falernum',
+    description: 'A rum-based liqueur made with pure sugar cane, lime, almond, cloves and spices. Very popular for use in tropical cocktails such as Zombie, and in Corn N Oil.',
+    category: 7},
+
+    {si_id: 41,
+    name: 'Grenadine',
+    description: 'Grenadine is a commonly used, pomegranate-based bar syrup, characterized by a flavour that is both tart and sweet, and by a deep red colour.',
+    category: 13},
+
+    {si_id: 42,
+    name: 'Peychaud\'s Bitters',
+    description: 'Peychaud\'s Bitters was originally created around 1830 by Antoine Amédée Peychaud, a Creole apothecary from the French colony of Saint-Domingue (now Haiti) who settled in New Orleans, Louisiana in 1795. It is a gentian-based bitters with a lighter body, sweeter taste, and more floral aroma. Peychaud\'s Bitters is the definitive component of the Sazerac cocktail.',
+    category: 12},
+
+    {si_id: 43,
+    name: 'Punt e Mes',
+    description: 'Punt e Mes (Piedmontese: "point and a half") is an Italian vermouth. It is dark brown in color and has a bitter flavor. The name may refer to the flavor being characterized as one ”point” of sweetness and half a point of bitterness.',
+    category: 8},
+
     // {si_id: ,
     // name: '',
     // description: '',
     // category: },
 
+    // {si_id: ,
+    // name: '',
+    // description: '',
+    // category: },
   ];
 
   return knex('stock_items').del()
