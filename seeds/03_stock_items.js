@@ -217,6 +217,31 @@ exports.seed = function(knex, Promise) {
     description: 'Punt e Mes (Piedmontese: "point and a half") is an Italian vermouth. It is dark brown in color and has a bitter flavor. The name may refer to the flavor being characterized as one ”point” of sweetness and half a point of bitterness.',
     category: 8},
 
+    {si_id: 44,
+    name: 'lime',
+    description: 'A lime (from French lime, from Arabic līma, from Persian līmū, "lemon") is a hybrid citrus fruit, which is typically round, lime green, 3–6 centimetres in diameter, and containing acidic juice vesicles.',
+    category: 16},
+
+    {si_id: 45,
+    name: 'Luxardo Maraschino',
+    description: 'The Luxardo Maraschino follows the original recipe from 1821, and requires four years to produce. Cherries are harvested from Luxardo\'s own trees and the solid components are then infused in larchwood vats for three years. The product is distilled in small copper pot stills and aged in Finnish ash wood for the remaining year. Finally, a combination of sugar and water is added before bottling.',
+    category: 7},
+
+    {si_id: 46,
+    name: 'Dolin Vermouth de Chambery',
+    description: 'Dolin Vermouth de Chambery is made of fine wines and includes botanicals found in the Alpine meadows above Chambery and surrounding regions. Together they impart a fresh and elegant nose, with a subtle and complex palate. Ideal as an aperitif or in cocktails.',
+    category: 8},
+
+    {si_id: 47,
+    name: 'Fee Brothers\' West Indian Orange Bitters',
+    description: 'The fine flavor of this product is obtained principally from the skins of oranges grown in the West Indies. ',
+    category: 12},
+
+    // {si_id: ,
+    // name: '',
+    // description: '',
+    // category: },
+
     // {si_id: ,
     // name: '',
     // description: '',
