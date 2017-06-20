@@ -14,6 +14,8 @@ HTML5, Bootstrap CSS, ES6 & jQuery, Node & Express, PostgreSQL & Knex, Heroku
 <https://drinking-buddies.herokuapp.com>
 
 ## Screenshots and Walkthrough
+### [youtube_walkthrough](https://youtu.be/JKTFMN05Btw)
+
 Upon first visiting [Drinking Buddies](https://drinking-buddies.herokuapp.com), users are greeted by a login page:
 ![D-B_login](screenshots/1-login.png)
 
@@ -55,7 +57,7 @@ While the Bartender's Guide provides a simple abstract of the recipe,
 And, the Party Menu details the libations for guests:
 ![D-B_party_menu](screenshots/13-party_menu.png)
 
-However, should the database fall short of supplying the specific cocktail a user desires, the user can create a new recipe by clicking the `Add New` button at the bottom of the page...
+However, should the database fall short of supplying the specific cocktail a user desires, the user can create a new recipe by clicking the `Add New` button at the bottom of the Recipes page...
 ![D-B_add_recipe](screenshots/14-add_recipe.png)
 
 Which toggles open the create recipe dialog box:
