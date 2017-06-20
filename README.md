@@ -34,12 +34,11 @@ In order to proceed, users must register - to push the social agenda of connecti
 <https://trello.com/b/w2uDPrnh/the-misterfits-present-drinking-buddies>
 
 ##Stretch goals
-1. a more robust social component allowing:<ul>
+1. a more robust social component allowing:
   <li>a. responsibility sharing based on bar contents</li>
   <li>b. searchable open party to engage local users outside one's immediate network</li>
   <li>c. invite non-user friends to join community and party</li>
   <li>d. gamify user accomplishments - parties hosted, cocktails submitted, invites sent</li>
-</ul>
 
 2. eye-catching visualizations of cocktail recipes, both logged and in-process:
   a. standard templates for ratios of liquor, liqueur, acid // sour, sweet, bitter
