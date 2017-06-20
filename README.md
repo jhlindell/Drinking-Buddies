@@ -35,10 +35,12 @@ In order to proceed, users must register - to push the social agenda of connecti
 
 ##Stretch goals
 1. a more robust social component allowing:
-
   a. responsibility sharing based on bar contents
+
   b. searchable open party to engage local users outside one's immediate network
+
   c. invite non-user friends to join community and party
+  
   d. gamify user accomplishments - parties hosted, cocktails submitted, invites sent
 
 
