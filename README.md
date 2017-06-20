@@ -31,7 +31,7 @@ From this page, users can find and connect with other registered users, querying
 To manage interaction with the cocktail recipe database, users can inspect their collections of recipes known as 'menus' via the My Cocktails tab; the default page for this tab is My Menus providing an overview of created menus and the option to create a new menu:
 ![D-B_create_menu](screenshots/5-create_menu.png)
 
-Clicking Create initiates a new database table and redirects the user to the Recipes page in the My Cocktails tab...
+Clicking `Create` initiates a new database table and redirects the user to the Recipes page in the My Cocktails tab...
 ![D-B_menu_created](screenshots/6-menu_created.png)
 
 Where recipes can be browsed (the default HTTP method on the page is GET all) - or searched by text...
@@ -46,8 +46,26 @@ Confirming the addition (or the presence of that recipe on the menu already):
 Accessing the suite of party-planning tools is accomplished via the Plan a Party family tab. Any menu may be loaded via the drop-down menu on the Plan a Party landing page - and attendee details checked:
 ![D-B_load_party](screenshots/10-load_party.png)
 
-The Master List provides an overview of the total ingredients required for the party, doing the algebra required to ensure adequate supplies are on-hand:
+The Master List provides an overview of the total ingredients required for the party, doing the algebra required to ensure adequate supplies are on-hand,
 ![D-B_master_list](screenshots/11-master_list.png)
+
+While the Bartender's Guide provides a simple abstract of the recipe,
+![D-B_bartender_guide](screenshots/12-bartender_guide.png)
+
+And, the Party Menu details the libations for guests:
+![D-B_party_menu](screenshots/13-party_menu.png)
+
+However, should the database fall short of supplying the specific cocktail a user desires, the user can create a new recipe by clicking the `Add New` button at the bottom of the page...
+![D-B_add_recipe](screenshots/14-add_recipe.png)
+
+Which toggles open the create recipe dialog box:
+![D-B_create_recipe](screenshots/15-create_recipe.png)
+
+Once the recipe is complete, `Update Recipe` adds the cocktail to storage...
+![D-B_save_recipe](screenshots/16-save_recipe.png)
+
+And, adds it to the party menu:
+![D-B_recipe_saved_added](screenshots/17-recipe_saved_added.png)
 
 ## Minimum Viable Product goals
 1. a RESTful server with routes for user authorization, and database CRUD
