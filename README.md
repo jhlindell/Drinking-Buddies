@@ -22,6 +22,8 @@ In order to proceed, users must register - to push the social agenda of connecti
 ![D-B_signup](screenshots/2-signup.png)
 
 
+
+
 ##Minimum Viable Product goals
 1. a RESTful server with routes for user authorization, and database CRUD
 2. a 3NF database of cocktail recipes and users
@@ -35,19 +37,17 @@ In order to proceed, users must register - to push the social agenda of connecti
 1. a more robust social component allowing:
 
   a. responsibility sharing based on bar contents
-
   b. searchable open party to engage local users outside one's immediate network
-
   c. invite non-user friends to join community and party
-
   d. gamify user accomplishments - parties hosted, cocktails submitted, invites sent
-2. eye-catching visualizations of cocktail recipes, both logged and in-process:
 
+
+2. eye-catching visualizations of cocktail recipes, both logged and in-process:
   a. standard templates for ratios of liquor, liqueur, acid // sour, sweet, bitter
+
+
 3. a tag system to categorize cocktail themes allowing:
 
   a. narrowed recipe search
-
   b. recipe suggestions
-  
   c. CSS-themes
