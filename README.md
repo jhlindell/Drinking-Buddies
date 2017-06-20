@@ -14,7 +14,7 @@ HTML5, Bootstrap CSS, ES6 & jQuery, Node & Express, PostgreSQL & Knex, Heroku
 <https://drinking-buddies.herokuapp.com>
 
 ## Screenshots and Walkthrough
-### [youtube_walkthrough](https://youtu.be/JKTFMN05Btw)
+### [YouTube Walkthrough](https://youtu.be/JKTFMN05Btw)
 
 Upon first visiting [Drinking Buddies](https://drinking-buddies.herokuapp.com), users are greeted by a login page:
 ![D-B_login](screenshots/1-login.png)
