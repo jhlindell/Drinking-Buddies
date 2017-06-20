@@ -1,7 +1,7 @@
 
-# Q2-Project: The Misterfits present: Drinking Buddies!!
+<h1> Q2-Project: The Misterfits present: Drinking Buddies!!
 
-##What is this application?
+<h2>What is this application?
 Drinking Buddies database (DBdb) is a full-stack web application layering a social-sharing component over a party-planning tool with access to a cocktail recipe database.
 
 ##What problem does DBdb solve?
@@ -41,11 +41,10 @@ In order to proceed, users must register - to push the social agenda of connecti
   <li>d. gamify user accomplishments - parties hosted, cocktails submitted, invites sent</li>
 
 2. eye-catching visualizations of cocktail recipes, both logged and in-process:
-  a. standard templates for ratios of liquor, liqueur, acid // sour, sweet, bitter
+  <li>a. standard templates for ratios of liquor, liqueur, acid // sour, sweet, bitter</li>
 
 
 3. a tag system to categorize cocktail themes allowing:
-
-  a. narrowed recipe search
-  b. recipe suggestions
-  c. CSS-themes
+  <li>a. narrowed recipe search</li>
+  <li>b. recipe suggestions</li>
+  <li>c. CSS-themes</li>
