@@ -6,7 +6,7 @@ var masterList = [];
 calculateMasterList();
 var numIngredients;
 var counterIndex = 0;
-var tableBuilder = window.setInterval(buildTable, 300);
+var tableBuilder = window.setInterval(buildTable, 150);
 
 
 // sample ingredient object
