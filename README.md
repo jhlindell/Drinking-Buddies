@@ -43,6 +43,11 @@ And, added to any menu in the user's database table.
 Confirming the addition (or the presence of that recipe on the menu already):
 ![D-B_recipe_confirm](screenshots/9-recipe_confirm.png)
 
+Accessing the suite of party-planning tools is accomplished via the Plan a Party family tab. Any menu may be loaded via the drop-down menu on the Plan a Party landing page - and attendee details checked:
+![D-B_load_party](screenshots/10-load_party.png)
+
+The Master List provides an overview of the total ingredients required for the party, doing the algebra required to ensure adequate supplies are on-hand:
+![D-B_master_list](screenshots/11-master_list.png)
 
 ## Minimum Viable Product goals
 1. a RESTful server with routes for user authorization, and database CRUD
