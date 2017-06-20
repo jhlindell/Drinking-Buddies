@@ -22,8 +22,26 @@ In order to proceed, users must register - to push the social agenda of connecti
 ![D-B_signup](screenshots/2-signup.png)
 
 
-Upon successful login, token authentication is created to populate the users' various profiles, such as Social, the first secure page:
+Upon successful login, token authentication is created to populate the users' various database authorizations, such as the Social tab, the secure-site's landing page, displaying core Profile information and current social connections:
 ![D-B_social](screenshots/3-social.png)
+
+From this page, users can find and connect with other registered users, querying the database with a username / full-name toggle. New friends are reloaded into the My Drinking Buddies area:
+![D-B_find_friend](screenshots/4-find_friend.png)
+
+To manage interaction with the cocktail recipe database, users can inspect their collections of recipes known as 'menus' via the My Cocktails tab; the default page for this tab is My Menus providing an overview of created menus and the option to create a new menu:
+![D-B_create_menu](screenshots/5-create_menu.png)
+
+Clicking Create initiates a new database table and redirects the user to the Recipes page in the My Cocktails tab...
+![D-B_menu_created](screenshots/6-menu_created.png)
+
+Where recipes can be browsed (the default HTTP method on the page is GET all) - or searched by text...
+![D-B_find_recipe](screenshots/7-find_recipe.png)
+
+And, added to any menu in the user's database table.
+![D-B_add_recipe](screenshots/8-add_recipe.png)
+
+Confirming the addition (or the presence of that recipe on the menu already):
+![D-B_recipe_confirm](screenshots/9-recipe_confirm.png)
 
 
 ## Minimum Viable Product goals
@@ -43,7 +61,6 @@ Upon successful login, token authentication is created to populate the users' va
 
 2. eye-catching visualizations of cocktail recipes, both logged and in-process:
   * standard templates for ratios of liquor, liqueur, acid // sour, sweet, bitter
-
 
 3. a tag system to categorize cocktail themes allowing:
   * narrowed recipe search
