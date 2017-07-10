@@ -30,6 +30,7 @@ function getIngredients(id){
       'ingredients.id',
       'units.name as unit',
       'ingredients.measure',
+      'stock_items.si_id',
       'stock_items.name as ingredientName',
       'recipe_id',
       'ingredients.order'

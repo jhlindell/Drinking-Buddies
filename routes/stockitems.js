@@ -20,7 +20,7 @@ router.get('/:id?', (req, res, next) => {
     });
 });
 
-//post a search by name to db
+//search by name from db
 router.post('/search', (req,res,next) => {
   let id = req.body.term;
   let keyword = req.body.toggle;
